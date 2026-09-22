@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>1st Lady Cosmetic — Premium Beauty, Skincare, Wigs & Essentials</title>
+  <meta name="description" content="1st Lady Cosmetic — Premium African skincare, luxury hair & wigs, designer eyewear, body butter, makeup, perfume and baby care. Taiwo Isale, Kwara State, Nigeria.">
+  <meta name="theme-color" content="#20191B">
+  <!-- Favicon: rose monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B76E79'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3E1st%3C/text%3E%3Ccircle cx='48' cy='16' r='6' fill='%23B9965A'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B76E79'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3E1st%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose: { DEFAULT: '#B76E79', dark: '#8E4D58', light: '#F8E9E9', 50: '#FFFAF8', 100: '#FBEDED' },
+            cream: '#FFFAF8',
+            creamdark: '#F6EEEB',
+            dark: '#20191B',
+            ink: '#302527',
+            gold: '#B9965A',
+            whatsapp: '#25D366'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 15px 50px rgba(32,25,27,0.08)',
+            lift: '0 20px 60px rgba(183,110,121,0.25)',
+            card: '0 10px 30px rgba(32,25,27,0.07)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #FFFAF8; color: #20191B; }
+    h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
+    ::-webkit-scrollbar { width: 10px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #FFFAF8; }
+    ::-webkit-scrollbar-thumb { background: #E8CFCF; border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #B76E79; }
+    .glass { backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .hero-grid-bg {
+      background-image: radial-gradient(#E9CFCF 1.2px, transparent 1.2px);
+      background-size: 22px 22px;
+      mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 40%, transparent 75%);
+    }
+    .marquee-track { display:flex; gap:2.5rem; width:max-content; animation: marquee 28s linear infinite; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(18px) } to { opacity:1; transform: translateY(0) } }
+    .animate-fadeUp { animation: fadeUp .6s ease both; }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    .floaty-delay { animation: floaty 7.5s ease-in-out infinite; animation-delay: 1.2s; }
+    .card-img-zoom img { transition: transform .8s cubic-bezier(.16,1,.3,1); }
+    .card-img-zoom:hover img { transform: scale(1.08); }
+    .no-scrollbar::-webkit-scrollbar { display:none; }
+    .no-scrollbar { scrollbar-width:none; }
+    .text-stroke { -webkit-text-stroke: 1px rgba(183,110,121,.35); color: transparent; }
+    input:focus, select:focus, textarea:focus { outline:none; border-color:#B76E79 !important; box-shadow:0 0 0 4px rgba(183,110,121,.12); }
+    #toast { transition: transform .4s cubic-bezier(.16,1,.3,1), opacity .4s; }
+    .icon { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .icon svg { width:100%; height:100%; }
+    img { max-width:100%; height:auto; }
+    /* ---- Mobile responsiveness ---- */
+    @media (max-width: 640px) {
+      .marquee-track { animation-duration: 18s; gap:1.5rem; }
+      #cart-panel { border-radius:0 !important; max-width:100% !important; }
+      .floaty, .floaty-delay { animation:none; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      input, select, textarea { font-size:16px !important; } /* prevent iOS zoom */
+    }
+    @media (max-width: 380px) {
+      h1 { word-break:break-word; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased relative overflow-x-hidden">
+
+  <!-- ANNOUNCEMENT -->
+  <div class="bg-dark text-white text-[11px] sm:text-xs py-2.5 px-4 text-center tracking-[0.18em] uppercase font-medium relative z-50 flex items-center justify-center gap-2">
+    <span class="hidden sm:inline-flex icon w-3.5 h-3.5 opacity-60"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span>
+    <span class="truncate">Free Delivery Across Nigeria on Orders Over 800,000</span>
+    <span class="mx-1 text-white/30">|</span>
+    <span class="text-rose-light font-bold normal-case tracking-normal">People</span>
+    <span class="hidden sm:inline-flex icon w-3.5 h-3.5 opacity-60"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-cream/85 glass border-b border-rose-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-[68px] sm:h-[76px] flex items-center justify-between gap-2 sm:gap-4">
+        <a href="#home" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+          <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-rose to-rose-dark text-white flex items-center justify-center font-serif font-bold text-lg sm:text-xl shadow-lift group-hover:rotate-6 transition shrink-0">1<sup class="text-[10px] mt-[-8px]">st</sup></span>
+          <span class="leading-none min-w-0">
+            <span class="block text-[16px] sm:text-[22px] font-serif font-bold tracking-tight truncate">1st Lady <span class="text-rose italic">Cosmetic</span></span>
+            <span class="hidden sm:block text-[10px] uppercase tracking-[0.28em] text-gray-500 font-semibold mt-1">Beauty • Hair • Glow</span>
+          </span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-[13.5px] font-semibold text-ink">
+          <a href="#home" class="hover:text-rose transition relative nav-link">Home</a>
+          <a href="#shop" class="hover:text-rose transition relative nav-link">Shop Catalog</a>
+          <a href="#categories" class="hover:text-rose transition relative nav-link">Categories</a>
+          <a href="#contact" class="hover:text-rose transition relative nav-link">Contact Us</a>
+          <a href="#track" class="hover:text-rose transition relative nav-link flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Track Order</a>
+        </nav>
+
+        <div class="flex items-center gap-2.5">
+          <a href="#shop" class="hidden sm:flex w-11 h-11 rounded-full border border-rose-100 bg-white items-center justify-center hover:border-rose hover:text-rose transition" title="Search products">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35M17 11A6 6 0 105 11a6 6 0 0012 0z"/></svg>
+          </a>
+          <button id="open-cart-btn" class="relative bg-dark text-white pl-4 pr-2 py-2 rounded-full text-sm font-semibold hover:bg-rose transition flex items-center gap-2 shadow-card">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <span class="hidden sm:inline">Bag</span>
+            <span id="cart-count" class="bg-rose text-white min-w-[28px] h-7 px-1.5 text-xs rounded-full flex items-center justify-center font-bold">0</span>
+          </button>
+          <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 rounded-full border border-rose-100 bg-white flex items-center justify-center" aria-label="Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h10"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-rose-100 bg-cream px-6 py-4">
+      <nav class="grid gap-1 text-sm font-semibold">
+        <a href="#home" class="py-3 border-b border-rose-100/70">Home</a>
+        <a href="#shop" class="py-3 border-b border-rose-100/70">Shop Catalog</a>
+        <a href="#categories" class="py-3 border-b border-rose-100/70">Categories</a>
+        <a href="#contact" class="py-3 border-b border-rose-100/70">Contact Us</a>
+        <a href="#track" class="py-3">Track Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="app-content" class="flex-grow"></main>
+
+  <!-- FLOATING CONTACT -->
+  <div class="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-4 sm:right-5 z-50 flex flex-col gap-2.5 sm:gap-3">
+    <a href="https://wa.me/+2348186729201?text=Hello%201LadyCosmetic!%20I%20have%20an%20inquiry%20about%20a%20product."
+       target="_blank" rel="noopener" title="Chat on WhatsApp"
+       class="bg-[#25D366] hover:bg-[#1EBE5D] text-white p-3.5 rounded-full shadow-lift transition flex items-center justify-center group">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.98 9.98 0 004.779 1.221h.005c5.505 0 9.988-4.478 9.989-9.984a9.98 9.98 0 00-9.994-9.999zm0 18.232h-.004a8.312 8.312 0 01-4.238-1.163l-.304-.181-3.149.744.757-3.07-.198-.315a8.29 8.29 0 01-1.272-4.463c0-4.577 3.725-8.303 8.304-8.303 2.218 0 4.303.865 5.871 2.435a8.258 8.258 0 012.43 5.871c0 4.578-3.725 8.303-8.301 8.303zm4.551-6.216c-.25-.125-1.477-.729-1.706-.812-.229-.083-.396-.125-.562.125-.167.25-.646.812-.792.979-.146.167-.292.188-.542.063-.25-.125-1.056-.39-2.011-1.242-.744-.664-1.246-1.484-1.392-1.734-.146-.25-.016-.385.109-.509.113-.112.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.562-1.354-.771-1.854-.204-.488-.413-.422-.562-.429-.146-.007-.313-.008-.479-.008-.167 0-.438.063-.667.313-.229.25-.875.854-.875 2.083 0 1.229.896 2.417 1.021 2.583.125.167 1.763 2.693 4.271 3.776.597.257 1.063.411 1.427.526.599.19 1.144.163 1.575.099.481-.072 1.477-.604 1.686-1.188.208-.583.208-1.083.146-1.188-.063-.104-.229-.167-.479-.292z"/></svg>
+      <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[140px] transition-all duration-300 text-xs font-bold pl-0 group-hover:pl-2">WhatsApp Us</span>
+    </a>
+    <a href="mailto:igwejiokefrancis@gmail.com?subject=Inquiry%20from%20GlowBeauty%20Website" title="Email Us via Gmail"
+       class="bg-dark hover:bg-rose text-white p-3.5 rounded-full shadow-lift transition flex items-center justify-center group">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[120px] transition-all duration-300 text-xs font-bold pl-0 group-hover:pl-2">Email Us</span>
+    </a>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 z-[60] bg-dark text-white text-sm font-medium px-4 py-3 rounded-2xl shadow-lift flex items-center gap-3 max-w-[92vw] w-max">
+    <span class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center shrink-0 icon"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+    <span id="toast-msg">Added to bag</span>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 invisible transition-opacity duration-300">
+    <div id="cart-backdrop" class="absolute inset-0 bg-dark/50 glass opacity-0 transition-opacity"></div>
+    <div id="cart-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-cream shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 rounded-l-[28px] overflow-hidden">
+      <div class="p-6 border-b border-rose-100 flex items-center justify-between bg-white">
+        <div>
+          <h2 class="text-xl font-serif font-bold">Your Shopping Bag</h2>
+          <p class="text-xs text-gray-500">Free delivery over ₦800,000</p>
+        </div>
+        <button id="close-cart-btn" class="w-10 h-10 rounded-full bg-cream border border-rose-100 hover:bg-rose hover:text-white transition text-xl leading-none">&times;</button>
+      </div>
+      <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4 bg-cream"></div>
+      <div class="p-6 border-t border-rose-100 bg-white space-y-3 rounded-t-[24px] shadow-soft">
+        <div class="flex justify-between text-sm">
+          <span class="text-gray-500">Subtotal</span>
+          <span id="cart-subtotal" class="font-bold text-dark text-lg">₦0</span>
+        </div>
+        <div class="h-1.5 bg-rose-100 rounded-full overflow-hidden"><div id="free-ship-bar" class="h-full bg-gradient-to-r from-rose to-gold rounded-full transition-all" style="width:0%"></div></div>
+        <p id="free-ship-msg" class="text-[11px] text-gray-500">Taxes and shipping calculated at checkout.</p>
+        <button id="proceed-checkout-btn" class="w-full bg-dark text-white py-4 rounded-full font-bold hover:bg-rose transition flex items-center justify-center gap-2 min-h-[52px]">
+          Proceed to Checkout <span class="icon w-4 h-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+        <button onclick="toggleCart(false)" class="w-full text-xs font-semibold text-gray-500 hover:text-rose py-1">Continue shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-cream mt-14 sm:mt-20 relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-rose/20 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-24 w-96 h-96 bg-gold/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-10 sm:py-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 relative">
+      <div class="space-y-4">
+        <h3 class="text-2xl font-serif font-bold">1st lady<span class="text-rose"> Cosmetic</span></h3>
+        <p class="text-[13px] text-gray-400 leading-relaxed">Premium African skincare, luxury hair & wigs, designer eyewear, body butter, and gentle baby care.</p>
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="text-[11px] bg-white/10 border border-white/10 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"><span class="icon w-3 h-3 text-gold"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></span>4.9 Rated</span>
+          <span class="text-[11px] bg-white/10 border border-white/10 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"><span class="icon w-3 h-3 text-emerald-400"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>100% Authentic</span>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4 uppercase tracking-widest text-gold">Shop Departments</h4>
+        <ul class="space-y-2.5 text-[13px] text-gray-300">
+          <li><a href="#shop" class="hover:text-rose transition">Skincare & Serums</a></li>
+          <li><a href="#shop" class="hover:text-rose transition">Body Creams & Lotions</a></li>
+          <li><a href="#shop" class="hover:text-rose transition">Wigs & Hair Products</a></li>
+          <li><a href="#shop" class="hover:text-rose transition">Eyewear & Glasses</a></li>
+          <li><a href="#shop" class="hover:text-rose transition">Baby & Mom Care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4 uppercase tracking-widest text-gold">Instant Contact</h4>
+        <ul class="space-y-3 text-[13px] text-gray-300">
+          <li>
+            <a href="https://wa.me/23408186729201" target="_blank" class="flex items-center gap-2.5 hover:text-[#25D366] transition">
+              <span class="w-8 h-8 rounded-full bg-[#25D366]/15 text-[#25D366] flex items-center justify-center icon p-1.5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.3-3.8-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.9.1.1.1.3 0 .4-.1.2-.2.3-.4.5-.1.1-.2.2-.1.4.1.3.6 1.1 1.4 1.7 1 .9 1.8 1.1 2 1.2.3.1.4.1.5-.1l.8-1c.2-.2.3-.2.6-.1l1.7.8c.2.1.4.2.5.3 0 .1 0 .6-.1 1.1z"/></svg></span>
+              <span>WhatsApp: +23408186729201</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hello@glowbeauty.ng" class="flex items-center gap-2.5 hover:text-rose transition">
+              <span class="w-8 h-8 rounded-full bg-rose/15 text-rose flex items-center justify-center icon p-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
+              <span class="break-all">Gmail / Email: igwejiokefrancis@gmail.com</span>
+            </a>
+          </li>
+          <li><a href="#track" class="hover:text-rose transition pl-10 inline-flex items-center gap-1.5">Track Delivery <span class="icon w-3.5 h-3.5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4 uppercase tracking-widest text-gold">Location & Hours</h4>
+        <p class="text-[13px] text-gray-300 leading-relaxed">
+          Taiwo Isale, Kwara State, Nigeria.<br>
+          Mon - Sat: 9:00 AM - 7:00 PM<br>
+          Customer Service Active 24/7 via WhatsApp & Email.
+        </p>
+        <a href="#contact" class="inline-block mt-4 text-xs font-bold bg-white text-dark px-5 py-2.5 rounded-full hover:bg-rose hover:text-white transition">Get Directions</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 text-center py-5 text-xs text-gray-500 relative px-4">
+      &copy; 2026 1st Lady Cosmetics Ltd. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // EXPANDED PRODUCT CATALOG (30+ ITEMS) — preserved personal catalogue data
+    const initialProducts = [
+      { id: "prod-sk-01", name: "Velvet Rose Hydrating Serum", category: "Skincare", price: 14500, rating: 4.9, reviewsCount: 128, images: ["https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"], shades: ["30ml Dropper"], description: "Infused with Damask Rose water, hyaluronic acid, and botanical squalane to deeply hydrate dry skin.", ingredients: "Rose Water, Hyaluronic Acid, Niacinamide, Squalane", usage: "Apply 3-4 drops morning and night after cleansing." },
+      { id: "prod-sk-02", name: "Vitamin C Brightening Face Cream", category: "Skincare", price: 16000, rating: 4.8, reviewsCount: 95, images: ["https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=800"], shades: ["50ml Jar"], description: "Rejuvenating daily face moisturizer enriched with 15% Vitamin C and Ferulic Acid.", ingredients: "Ascorbic Acid, Ferulic Acid, Aloe Vera, Glycerin", usage: "Smooth over face and neck morning and evening." },
+      { id: "prod-sk-03", name: "Snail Mucin Repair Gel Moisturizer", category: "Skincare", price: 13500, rating: 4.9, reviewsCount: 112, images: ["https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"], shades: ["100ml Tube"], description: "Lightweight gel moisturizer formulated to soothe irritated skin barrier and repair blemishes.", ingredients: "92% Snail Secretion Filtrate, Sodium Hyaluronate, Allantoin", usage: "Apply evenly to face as the final step of skincare." },
+      { id: "prod-sk-04", name: "Gentle Tea Tree Cleansing Gel", category: "Skincare", price: 9500, rating: 4.7, reviewsCount: 84, images: ["assest/images/images.jpg"], shades: ["200ml Pump"], description: "Purifying gel cleanser that unclogs pores and regulates oil production without stripping.", ingredients: "Tea Tree Leaf Oil, Salicylic Acid, Green Tea Extract", usage: "Lather with water and gently massage over face. Rinse thoroughly." },
+      { id: "prod-sk-05", name: "Invisible UV Shield Sunscreen SPF 50", category: "Skincare", price: 12000, rating: 5.0, reviewsCount: 204, images: ["assest/images/black.jpg"], shades: ["50ml Tube"], description: "Zero white-cast broad spectrum facial sunscreen suitable for dark and sensitive skin.", ingredients: "Zinc Oxide, Octocrylene, Vitamin E, Centella Asiatica", usage: "Apply generously 15 minutes before sun exposure." },
+      { id: "prod-bc-01", name: "Raw Shea Butter Radiance Body Cream", category: "Body Care", price: 11000, rating: 4.9, reviewsCount: 190, images: ["assest/images/body.webp"], shades: ["500ml Tub"], description: "Deep moisturizing whipped body cream enriched with unrefined shea butter, cocoa butter, and coconut oil.", ingredients: "Raw Shea Butter, Coconut Oil, Cocoa Butter, Vitamin E", usage: "Smooth all over body after showering for 24-hour hydration." },
+      { id: "prod-bc-02", name: "Niacinamide Brightening Body Lotion", category: "Body Care", price: 13500, rating: 4.7, reviewsCount: 88, images: ["https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800"], shades: ["400ml Pump"], description: "Fast-absorbing body lotion designed to fade dark spots and unify hyperpigmentation.", ingredients: "Niacinamide (5%), Alpha Arbutin, Licorice Root Extract", usage: "Apply daily on body after bathing." },
+      { id: "prod-bc-03", name: "Warm Vanilla & Cocoa Body Butter Lotion", category: "Body Care", price: 12500, rating: 4.9, reviewsCount: 140, images: ["https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800"], shades: ["350ml Tub"], description: "Luxurious cocoa body butter with a long-lasting gourmand sweet vanilla scent.", ingredients: "Cocoa Seed Butter, Almond Oil, Vanilla Extract, Glycerin", usage: "Massage into skin focusing on dry elbows, knees, and feet." },
+      { id: "prod-bc-04", name: "Exfoliating Turmeric & Honey Body Scrub", category: "Body Care", price: 10500, rating: 4.8, reviewsCount: 76, images: ["https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=800"], shades: ["300g Jar"], description: "Polishing sugar body scrub infused with organic turmeric powder to brighten rough skin.", ingredients: "Cane Sugar, Organic Turmeric, Raw Honey, Jojoba Oil", usage: "Gently scrub damp skin 2-3 times a week." },
+      { id: "prod-hc-01", name: "Chebe & Castor Growth Hair Cream", category: "Hair Care & Wigs", price: 8500, rating: 4.9, reviewsCount: 164, images: ["https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=800"], shades: ["250g Jar"], description: "Rich conditioning hair cream with authentic Chadian Chebe powder to lock in length.", ingredients: "Raw Shea Butter, Chebe Powder, Black Castor Oil, Peppermint Oil", usage: "Apply to damp hair sections to lock in moisture before styling." },
+      { id: "prod-hc-02", name: "Luxe HD Lace Front Body Wave Wig", category: "Hair Care & Wigs", price: 145000, rating: 5.0, reviewsCount: 78, images: ["https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800"], shades: ["22 Inches", "26 Inches", "30 Inches"], description: "100% Virgin Human Hair HD transparent lace wig with natural hairline pre-plucked.", ingredients: "100% Unprocessed Human Virgin Hair", usage: "Install with wig adhesive or wear glueless with adjustable strap." },
+      { id: "prod-hc-03", name: "Straight Bone Straight HD Closure Wig", category: "Hair Care & Wigs", price: 130000, rating: 4.9, reviewsCount: 92, images: ["https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800"], shades: ["20 Inches", "24 Inches"], description: "Silky bone straight hair wig that stays completely flat and tangles-free.", ingredients: "100% Raw Vietnamese Virgin Hair", usage: "Comb through with wide-tooth comb and flat iron up to 230°C." },
+      { id: "prod-hc-04", name: "Deep Wave Curly Human Hair Bob Wig", category: "Hair Care & Wigs", price: 85000, rating: 4.8, reviewsCount: 61, images: ["https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=800"], shades: ["12 Inches", "14 Inches"], description: "Bouncy deep wave curly bob wig with breathable wig cap structure.", ingredients: "100% Virgin Hair", usage: "Spritz with water and leave-in conditioner to reactivate curls." },
+      { id: "prod-hc-05", name: "Rosemary & Biotin Scalp Elixir Hair Oil", category: "Hair Care & Wigs", price: 7500, rating: 4.9, reviewsCount: 180, images: ["https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&q=80&w=800"], shades: ["100ml Bottle"], description: "Nutrient-dense scalp hair growth oil that stimulates follicles and prevents shedding.", ingredients: "Rosemary Essential Oil, Biotin, Argan Oil, Batana Oil", usage: "Massage into scalp 3-4 times weekly." },
+      { id: "prod-eg-01", name: "Glamour Oversized Anti-UV Sunglasses", category: "Accessories & Glasses", price: 15000, rating: 4.8, reviewsCount: 64, images: ["https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800"], shades: ["Gold Frame / Black Tint", "Rose Gold Tint"], description: "Statement oversized women's sunglasses with UV400 protective lenses.", ingredients: "UV400 Polycarbonate Lenses, Alloy Frame", usage: "Wear outdoors for eye protection and style statement." },
+      { id: "prod-eg-02", name: "Cat-Eye Designer Blue Light Glasses", category: "Accessories & Glasses", price: 12500, rating: 4.7, reviewsCount: 45, images: ["https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=800"], shades: ["Clear Lens / Tortoiseshell Frame"], description: "Fashionable anti-blue light blocking glasses to protect eyes from digital screens.", ingredients: "Anti-Reflective Lenses, Acetate Frame", usage: "Wear while working on laptop, phone, or TV." },
+      { id: "prod-bm-01", name: "Gentle Soothing Baby Moisture Cream", category: "Baby & Mom", price: 8000, rating: 5.0, reviewsCount: 112, images: ["https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&q=80&w=800"], shades: ["250ml Bottle"], description: "Pediatrician-tested ultra-gentle baby moisturizing lotion formulated for sensitive newborn skin.", ingredients: "Colloidal Oatmeal, Chamomile Extract, Organic Calendula", usage: "Gently massage onto clean baby skin after bath." },
+      { id: "prod-bm-02", name: "Baby Soft Herbal Hair & Scalp Oil", category: "Baby & Mom", price: 6500, rating: 4.9, reviewsCount: 85, images: ["https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&q=80&w=800"], shades: ["150ml Dropper"], description: "Tear-free scalp oil that clears cradle cap and promotes soft baby hair growth.", ingredients: "Jojoba Seed Oil, Sweet Almond Oil, Chamomile Extract", usage: "Apply a small drop to baby scalp and gently comb through." },
+      { id: "prod-mk-01", name: "Luminous Gold Liquid Foundation", category: "Makeup", price: 18500, rating: 4.8, reviewsCount: 210, images: ["https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&q=80&w=800"], shades: ["Cocoa Gold 01", "Honey Bronze 02", "Warm Caramel 03"], description: "Medium buildable coverage foundation that melts seamlessly into rich skin tones.", ingredients: "Water, Isododecane, Titanium Dioxide, Vitamin E", usage: "Blend onto skin using a wet sponge or foundation brush." },
+      { id: "prod-mk-02", name: "Satin Velvet Matte Lipstick", category: "Makeup", price: 7500, rating: 4.8, reviewsCount: 178, images: ["https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=800"], shades: ["Velvet Nude", "Lagos Plum", "Royal Red"], description: "Ultra-pigmented matte lipstick that glides on smoothly without drying lips.", ingredients: "Dimethicone, Synthetic Wax, Shea Butter, Mica", usage: "Apply directly starting from lip center outwards." },
+      { id: "prod-pf-01", name: "Oud Royale Extrait de Parfum", category: "Perfume", price: 38000, rating: 5.0, reviewsCount: 94, images: ["https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800"], shades: ["50ml EDP Spray"], description: "Opulent blend of Cambodian Oud, Amber, Vanilla, and fresh Rose notes.", ingredients: "Alcohol Denat, Fragrance (Parfum), Cambodian Oud Extract", usage: "Spritz on pulse points behind ears and wrists." }
+    ];
+
+    let state = { products: initialProducts, cart: [], currentView: 'home', selectedCategory: 'All', searchQuery: '', sortBy: 'featured' };
+
+    const CATEGORIES = ['All','Skincare','Body Care','Hair Care & Wigs','Accessories & Glasses','Baby & Mom','Makeup','Perfume'];
+
+    const CATEGORY_IMAGES = {
+      'Skincare': 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
+      'Body Care': 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=600',
+      'Hair Care & Wigs': 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=600',
+      'Accessories & Glasses': 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600',
+      'Baby & Mom': 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&q=80&w=600',
+      'Makeup': 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=600',
+      'Perfume': 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600'
+    };
+
+    const naira = n => '₦' + Number(n).toLocaleString();
+    function stars(r){ let s='<span class="inline-flex items-center gap-0.5">'; for(let i=1;i<=5;i++){ const fill=i<=Math.round(r)?'#B9965A':'#E5D5D5'; s+=`<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="${fill}"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>`; } s+='</span>'; return s; }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setupCartDrawer();
+      const mmBtn = document.getElementById('mobile-menu-btn');
+      const mm = document.getElementById('mobile-menu');
+      if(mmBtn && mm){ mmBtn.addEventListener('click', ()=> mm.classList.toggle('hidden')); mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.add('hidden'))); }
+      window.addEventListener('hashchange', handleRouting);
+      handleRouting();
+      updateCartUI();
+    });
+
+    function handleRouting() {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      if (hash.startsWith('product-')) { const id = hash.replace('product-', ''); state.currentView='detail'; renderProductDetail(id); }
+      else if (hash==='categories') { state.currentView='categories'; renderCategoriesView(); }
+      else if (hash==='contact') { state.currentView='contact'; renderContactView(); }
+      else if (hash==='checkout') { state.currentView='checkout'; renderCheckoutView(); }
+      else if (hash==='track') { state.currentView='track'; renderTrackView(); }
+      else if (hash==='shop') { state.currentView='shop'; renderShopView(); }
+      else { state.currentView='home'; renderHomeView(); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showToast(msg){
+      const t = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      t.classList.remove('translate-y-24','opacity-0');
+      clearTimeout(window._toastT);
+      window._toastT = setTimeout(()=> t.classList.add('translate-y-24','opacity-0'), 2400);
+    }
+
+    /* ---------- HOME ---------- */
+    function renderHomeView() {
+      const app = document.getElementById('app-content');
+      const featured = [...state.products].sort((a,b)=>b.reviewsCount-a.reviewsCount).slice(0,6);
+      const newArrivals = [...state.products].slice(10,16);
+
+      app.innerHTML = `
+      <!-- HERO -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 hero-grid-bg"></div>
+        <div class="absolute -top-20 -left-20 w-[420px] h-[420px] bg-rose-light blur-[90px] rounded-full opacity-80"></div>
+        <div class="absolute top-10 right-0 w-[380px] h-[380px] bg-gold/20 blur-[100px] rounded-full"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10 sm:pt-10 sm:pb-14 lg:pt-16 lg:pb-20 grid lg:grid-cols-2 gap-8 lg:gap-10 items-center relative">
+          <div class="space-y-5 sm:space-y-6 animate-fadeUp">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] uppercase tracking-[0.22em] font-bold bg-white px-4 py-2 rounded-full border border-gold/30 text-gold shadow-card"><svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Beauty & Essentials</span>
+              <span class="text-[11px] font-bold bg-dark text-white px-4 py-2 rounded-full"><svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Ships Across Nigeria</span>
+            </div>
+            <h1 class="text-[32px] leading-[1.08] sm:text-6xl lg:text-[68px] font-serif font-bold sm:leading-[1.02] tracking-tight">Feel Beautiful.<br><span class="italic font-medium text-transparent bg-clip-text bg-gradient-to-r from-rose via-rose-dark to-gold">Be Effortlessly You.</span></h1>
+            <p class="text-gray-600 max-w-xl text-[14px] sm:text-[15px] leading-relaxed">Discover body creams, hair growth creams, luxury wigs, designer glasses, makeup & baby essentials — carefully curated for melanin-rich skin, by <strong>1st Lady Cosmetic</strong>.</p>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 pt-1">
+              <a href="#shop" class="group bg-dark text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-rose transition shadow-lift flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px]">Shop Catalog (${state.products.length} Items) <span class="group-hover:translate-x-1 transition"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+              <a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20need%20assistance." target="_blank" class="bg-[#25D366] text-white px-7 py-4 rounded-full font-bold text-sm hover:brightness-95 transition shadow-lift flex items-center justify-center gap-2 w-full sm:w-auto min-h-[52px]"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg> WhatsApp Us</a>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6 pt-3">
+              <div class="flex -space-x-3">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=100" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="customer">
+                <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=100" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="customer">
+                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80&w=100" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="customer">
+                <span class="w-10 h-10 rounded-full bg-dark text-white text-[10px] font-bold border-2 border-white flex items-center justify-center">2k+</span>
+              </div>
+              <div class="text-xs"><div class="flex items-center gap-1"><span class="inline-flex gap-0.5"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></span><strong class="text-dark">4.9/5</strong></div><div class="text-gray-500 font-medium">Loved by 2,000+ customers</div></div>
+              <div class="hidden sm:block h-10 w-px bg-rose-100"></div>
+              <div class="hidden sm:block text-xs"><div class="font-bold text-dark text-base">24/7</div><div class="text-gray-500 font-medium">WhatsApp support</div></div>
+            </div>
+          </div>
+          <div class="relative mt-2 lg:mt-0">
+            <div class="relative rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-lift border-4 sm:border-[6px] border-white card-img-zoom">
+              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1000" alt="Modern cosmetic model" class="w-full h-[320px] sm:h-[420px] lg:h-[540px] object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-5 left-5 right-5 flex gap-3">
+                <div class="flex-1 bg-white/90 glass rounded-2xl p-3.5 flex items-center gap-3">
+                  <img src="${state.products[0].images[0]}" class="w-12 h-12 rounded-xl object-cover" alt="${state.products[0].name}">
+                  <div class="text-xs"><p class="font-bold truncate max-w-[140px]">${state.products[0].name}</p><p class="text-rose font-bold">${naira(state.products[0].price)}</p></div>
+                </div>
+                <div class="flex-1 bg-white/90 glass rounded-2xl p-3.5 hidden sm:flex items-center gap-3">
+                  <img src="${state.products[10].images[0]}" class="w-12 h-12 rounded-xl object-cover" alt="wig">
+                  <div class="text-xs"><p class="font-bold truncate max-w-[140px]">HD Lace Wigs</p><p class="text-rose font-bold">From ${naira(85000)}</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute left-2 sm:-left-4 top-4 sm:top-8 bg-white rounded-2xl shadow-lift px-3 py-2.5 sm:px-4 sm:py-3 flex items-center gap-2 sm:gap-3 floaty border border-rose-100 max-w-[200px]">
+              <span class="w-10 h-10 rounded-full bg-rose-light flex items-center justify-center text-lg"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/></svg></span>
+              <div class="text-xs"><p class="font-bold">100% Authentic</p><p class="text-gray-500">Dermatologist loved</p></div>
+            </div>
+            <div class="absolute right-2 sm:-right-3 bottom-24 sm:bottom-28 bg-dark text-white rounded-2xl shadow-lift px-3 py-2.5 sm:px-4 sm:py-3 flex items-center gap-2 sm:gap-3 floaty-delay max-w-[200px]">
+              <span class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center text-lg"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14v9H1zM15 11h4l3 3v3h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></span>
+              <div class="text-xs"><p class="font-bold">Fast Delivery</p><p class="text-gray-300">Nationwide <svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></p></div>
+            </div>
+          </div>
+        </div>
+        <!-- brand marquee -->
+        <div class="border-y border-rose-100 bg-white/70 glass py-3.5 overflow-hidden relative">
+          <div class="marquee-track text-[12px] font-bold uppercase tracking-[0.22em] text-ink/70">
+            ${Array(2).fill(`<span>Skincare <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Wigs <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Body Butter <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Makeup <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Perfume <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Eyewear <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Baby Care <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> Hair Growth <svg class="w-3 h-3 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span>`).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+        <div class="flex justify-between items-end mb-6">
+          <div><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-rose">Curated Departments</p><h2 class="text-3xl sm:text-4xl font-serif font-bold">Shop By Category</h2></div>
+          <a href="#categories" class="hidden sm:inline text-xs font-bold text-rose hover:underline">View all collections <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          ${CATEGORIES.filter(c=>c!=='All').slice(0,4).map((cat,i)=>{ const count = state.products.filter(p=>p.category===cat).length; return `
+            <button onclick="filterCategoryAndShop('${cat}')" class="group relative rounded-[24px] overflow-hidden text-left h-[220px] sm:h-[260px] card-img-zoom shadow-card border border-white">
+              <img src="${CATEGORY_IMAGES[cat]}" alt="${cat}" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+              <span class="absolute inset-0 bg-gradient-to-t from-dark/85 via-dark/20 to-transparent"></span>
+              <span class="absolute top-3 left-3 bg-white/90 text-[10px] font-bold px-3 py-1.5 rounded-full">${count} items</span>
+              <span class="absolute bottom-4 left-4 right-4 text-white"><span class="block font-serif font-bold text-lg leading-tight">${cat}</span><span class="text-[12px] opacity-80 group-hover:opacity-100 flex items-center gap-1 mt-1">Shop now <span class="group-hover:translate-x-1 transition"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></span>
+            </button>`;}).join('')}
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-4">
+          ${CATEGORIES.filter(c=>c!=='All').slice(4).map(cat=>{ const count = state.products.filter(p=>p.category===cat).length; return `
+            <button onclick="filterCategoryAndShop('${cat}')" class="bg-white rounded-2xl border border-rose-100 p-4 text-center hover:border-rose hover:shadow-card transition group">
+              <span class="block w-12 h-12 mx-auto rounded-2xl overflow-hidden mb-2"><img src="${CATEGORY_IMAGES[cat]}" class="w-full h-full object-cover group-hover:scale-110 transition" alt="${cat}"></span>
+              <span class="font-serif font-bold text-[13px] block leading-tight">${cat}</span><span class="text-[11px] text-gray-400 font-semibold">${count} items</span>
+            </button>`;}).join('')}
+        </div>
+      </section>
+
+      <!-- BESTSELLERS -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-5 sm:mb-6">
+          <div><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">Customer Favourites</p><h2 class="text-2xl sm:text-4xl font-serif font-bold">Top Bestsellers</h2><p class="text-xs text-gray-500 mt-1">Handpicked favourites across departments</p></div>
+          <a href="#shop" class="text-xs font-bold bg-dark text-white px-5 py-2.5 rounded-full hover:bg-rose transition self-start sm:self-auto whitespace-nowrap">View Full Shop <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">${featured.map((p,i)=>renderProductCard(p,i)).join('')}</div>
+      </section>
+
+      <!-- RITUAL BANNER -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+        <div class="relative rounded-[22px] sm:rounded-[32px] overflow-hidden shadow-lift">
+          <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=1600" class="absolute inset-0 w-full h-full object-cover" alt="Glow ritual" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-dark/95 via-dark/80 to-dark/30"></div>
+          <div class="relative p-6 sm:p-8 md:p-14 grid md:grid-cols-2 gap-6 sm:gap-8 items-center text-white">
+            <div class="space-y-4">
+              <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold bg-white/10 border border-white/15 px-4 py-2 rounded-full inline-block">The 1st Lady Ritual</span>
+              <h2 class="text-2xl sm:text-3xl md:text-5xl font-serif font-bold leading-tight">Melanin-safe glow, <span class="italic text-rose-light">without the white cast.</span></h2>
+              <p class="text-[13px] sm:text-sm text-gray-200 max-w-md leading-relaxed">From invisible SPF 50 to raw shea body butter and bone-straight HD wigs — everything is tested for rich skin tones and Nigerian weather.</p>
+              <div class="flex flex-col sm:flex-row sm:flex-wrap gap-2.5 sm:gap-3 pt-2">
+                <a href="#shop" class="bg-rose hover:bg-white hover:text-dark text-white font-bold px-7 py-3.5 rounded-full text-sm transition text-center min-h-[48px] flex items-center justify-center">Shop Bestsellers</a>
+                <a href="#categories" class="bg-white/10 border border-white/20 hover:bg-white hover:text-dark font-bold px-7 py-3.5 rounded-full text-sm transition text-center min-h-[48px] flex items-center justify-center">Explore Ritual</a>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-2 sm:gap-3">
+              ${[state.products[4],state.products[11],state.products[19]].map(p=>`<a href="#product-${p.id}" class="bg-white/10 glass border border-white/15 rounded-2xl p-3 text-center hover:bg-white hover:text-dark transition group"><img src="${p.images[0]}" class="w-full h-24 object-cover rounded-xl mb-2" alt="${p.name}"><p class="text-[11px] font-bold leading-tight line-clamp-2">${p.name}</p><p class="text-[11px] font-bold text-gold mt-1">${naira(p.price)}</p></a>`).join('')}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW ARRIVALS + PERKS -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 grid lg:grid-cols-3 gap-5">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-serif font-bold mb-4">New & Loved Right Now</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">${newArrivals.map((p,i)=>renderProductCard(p,i,true)).join('')}</div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-white rounded-[24px] border border-rose-100 p-6 shadow-card">
+            <h3 class="font-serif font-bold text-lg mb-4">Why shop with us?</h3>
+            <ul class="space-y-4 text-[13px]">
+              <li class="flex gap-3"><span class="w-10 h-10 rounded-full bg-rose-light text-rose flex items-center justify-center shrink-0"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>100% Authentic.</strong><br><span class="text-gray-500">No fakes, no mixes. Sourced for sensitive skin.</span></span></li>
+              <li class="flex gap-3"><span class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14v9H1zM15 11h4l3 3v3h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></span><span><strong>Nationwide delivery.</strong><br><span class="text-gray-500">Free over ₦800,000. Track on WhatsApp.</span></span></li>
+              <li class="flex gap-3"><span class="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0 icon p-2.5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></span><span><strong>Beauty consultants.</strong><br><span class="text-gray-500">Shade matching & wig customisation.</span></span></li>
+            </ul>
+            <div class="grid grid-cols-2 gap-2 mt-5">
+              <a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20need%20assistance." target="_blank" class="bg-[#25D366] text-white text-xs font-bold py-3 rounded-full text-center"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg> WhatsApp</a>
+              <a href="mailto:igwejiokefrancis@gmail.com?subject=Inquiry" class="bg-dark text-white text-xs font-bold py-3 rounded-full text-center"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg> Email Us</a>
+            </div>
+          </div>
+          <div class="bg-dark text-white rounded-[24px] p-6 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-rose/30 blur-3xl rounded-full"></div>
+            <p class="text-[11px] uppercase tracking-[0.25em] text-gold font-bold">Visit Us</p>
+            <h3 class="font-serif font-bold text-xl mt-1">Taiwo Isale, Kwara State</h3>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">Mon - Sat: 9:00 AM - 7:00 PM<br>Support 24/7 on WhatsApp & Email.</p>
+            <a href="#contact" class="inline-block mt-4 text-xs font-bold bg-white text-dark px-5 py-2.5 rounded-full">Contact Store <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="text-center mb-8"><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-rose">Glow Stories</p><h2 class="text-3xl sm:text-4xl font-serif font-bold">Loved Across Nigeria</h2></div>
+        <div class="grid md:grid-cols-3 gap-4">
+          ${[
+            {n:'Adaeze O.', c:'Lagos', t:'The Vitamin C cream cleared my dark spots in 3 weeks. No white cast, no irritation. I have repurchased twice!', img:'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=200'},
+            {n:'Fatima S.', c:'Ilorin', t:'My 26-inch body wave wig is so full and true to length. Pre-plucked hairline, zero shedding. Worth every naira.', img:'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=200'},
+            {n:'Tolu A.', c:'Abuja', t:'Ordered Monday, delivered Wednesday. The shea body butter smells divine and my skin stays soft all day.', img:'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80&w=200'}
+          ].map(r=>`<div class="bg-white rounded-[24px] border border-rose-100 p-5 sm:p-6 shadow-card"><div class="flex gap-0.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg class="w-4 h-4" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></div><p class="text-[13.5px] text-gray-600 mt-3 leading-relaxed">“${r.t}”</p><div class="flex items-center gap-3 mt-5"><img src="${r.img}" class="w-11 h-11 rounded-full object-cover" alt="${r.n}"><div class="text-xs"><p class="font-bold">${r.n}</p><p class="text-gray-500">Verified buyer • ${r.c}</p></div></div></div>`).join('')}
+        </div>
+      </section>
+
+      <!-- CONSULTANT CTA -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-4">
+        <div class="bg-gradient-to-r from-dark via-[#3a2429] to-rose-dark text-white rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lift relative overflow-hidden">
+          <div class="absolute inset-0 opacity-[0.12]" style="background-image:radial-gradient(white 1px,transparent 1px);background-size:18px 18px"></div>
+          <div class="space-y-2 text-center md:text-left relative">
+            <span class="text-[11px] font-bold uppercase text-gold tracking-[0.25em]">Need Advice or Assistance?</span>
+            <h2 class="text-2xl md:text-4xl font-serif font-bold">Talk to Our Beauty Consultants</h2>
+            <p class="text-[13px] text-gray-300 max-w-lg">Skin-type guidance, wig customisation, shade matching, or bulk orders — we reply fast on WhatsApp and Email.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative">
+            <a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20need%20assistance." target="_blank" class="bg-[#25D366] hover:brightness-95 text-white font-bold px-7 py-4 rounded-full text-sm flex items-center justify-center gap-2 shadow"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg> WhatsApp Chat</a>
+            <a href="mailto:igwejiokefrancis@gmail.com?subject=Inquiry" class="bg-white text-dark hover:bg-rose-light font-bold px-7 py-4 rounded-full text-sm flex items-center justify-center gap-2 shadow"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg> Send Email</a>
+          </div>
+        </div>
+      </section>
+      `;
+    }
+
+    /* ---------- CONTACT ---------- */
+    function renderContactView() {
+      const app = document.getElementById('app-content');
+      app.innerHTML = `
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-8 animate-fadeUp">
+          <div class="text-center space-y-3">
+            <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-rose bg-white border border-rose-100 px-4 py-2 rounded-full">We reply within hours</span>
+            <h1 class="text-4xl sm:text-5xl font-serif font-bold">Get In Touch</h1>
+            <p class="text-sm text-gray-500 max-w-md mx-auto">Order questions, skin recommendations, or wholesale inquiries? Reach us directly via WhatsApp or Email.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-8 rounded-[24px] border border-rose-100 shadow-card text-center space-y-4 hover:border-[#25D366] transition">
+              <div class="w-14 h-14 bg-[#25D366]/10 text-2xl rounded-2xl flex items-center justify-center mx-auto"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg></div>
+              <h2 class="font-serif font-bold text-xl">WhatsApp Instant Chat</h2>
+              <p class="text-xs text-gray-500">Fastest response — chat with support now.</p>
+              <a href="https://wa.me/23408186729201?text=Hello%20GlowBeauty!" target="_blank" class="block w-full bg-[#25D366] text-white py-3.5 rounded-full text-sm font-bold hover:brightness-95 transition">Start Chat (23408186729201)</a>
+              <p class="text-[11px] text-gray-400">Mon - Sat: 9AM - 7PM • Online 24/7</p>
+            </div>
+            <div class="bg-white p-8 rounded-[24px] border border-rose-100 shadow-card text-center space-y-4 hover:border-rose transition">
+              <div class="w-14 h-14 bg-rose-light text-2xl rounded-2xl flex items-center justify-center mx-auto"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
+              <h2 class="font-serif font-bold text-xl">Gmail / Email Us</h2>
+              <p class="text-xs text-gray-500">Detailed inquiries — replies within 24 hours.</p>
+              <a href="mailto:igwejiokefrancis@gmail.com?subject=Customer%20Inquiry" class="block w-full bg-dark text-white py-3.5 rounded-full text-sm font-bold hover:bg-rose transition break-all px-2">igwejiokefrancis@gmail.com</a>
+              <p class="text-[11px] text-gray-400">Taiwo Isale, Kwara State, Nigeria</p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-[24px] border border-rose-100 shadow-card grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-serif font-bold text-xl">Visit the Store</h3>
+              <p class="text-sm text-gray-500 mt-2 leading-relaxed">Taiwo Isale, Kwara State, Nigeria.<br>Mon - Sat: 9:00 AM - 7:00 PM<br>Customer Service Active 24/7 via WhatsApp & Email.</p>
+              <div class="flex gap-2 mt-5">
+                <a href="https://wa.me/+2348186729201" target="_blank" class="text-xs font-bold bg-dark text-white px-5 py-2.5 rounded-full">Directions via WhatsApp</a>
+                <a href="mailto:igwejiokefrancis@gmail.com" class="text-xs font-bold border border-rose-200 px-5 py-2.5 rounded-full">Email Store</a>
+              </div>
+            </div>
+            <form onsubmit="event.preventDefault(); showToast('Message sent! We will contact you shortly.'); this.reset();" class="space-y-3">
+              <h3 class="font-serif font-bold text-lg">Or Leave a Quick Message</h3>
+              <input type="text" placeholder="Your Full Name" required class="w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream">
+              <input type="email" placeholder="Your Email Address" required class="w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream">
+              <textarea placeholder="Write your message or inquiry here..." rows="4" required class="w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream"></textarea>
+              <button type="submit" class="w-full bg-rose text-white py-3.5 rounded-full font-bold text-sm hover:bg-rose-dark transition">Submit Message <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </form>
+          </div>
+        </section>`;
+    }
+
+    /* ---------- SHOP ---------- */
+    function getFiltered(){
+      let list = state.products.filter(p => {
+        const matchesCat = state.selectedCategory==='All' || p.category===state.selectedCategory;
+        const matchesSearch = p.name.toLowerCase().includes(state.searchQuery.toLowerCase()) || p.category.toLowerCase().includes(state.searchQuery.toLowerCase());
+        return matchesCat && matchesSearch;
+      });
+      if(state.sortBy==='low') list=[...list].sort((a,b)=>a.price-b.price);
+      if(state.sortBy==='high') list=[...list].sort((a,b)=>b.price-a.price);
+      if(state.sortBy==='rated') list=[...list].sort((a,b)=>b.rating-a.rating);
+      if(state.sortBy==='popular') list=[...list].sort((a,b)=>b.reviewsCount-a.reviewsCount);
+      return list;
+    }
+    function setSort(v){ state.sortBy=v; renderShopView(); }
+    function renderShopView() {
+      const app = document.getElementById('app-content');
+      const filtered = getFiltered();
+      app.innerHTML = `
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-5 sm:space-y-6 animate-fadeUp">
+          <div class="relative overflow-hidden rounded-[22px] sm:rounded-[28px] bg-dark text-white p-6 sm:p-8 md:p-10 flex flex-col md:flex-row justify-between gap-5 sm:gap-6 items-stretch md:items-center">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1200" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="shop banner">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent"></div>
+            <div class="relative"><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-gold">The Full Catalogue</p><h1 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mt-1 leading-tight">Shop All Beauty & Essentials</h1><p class="text-xs text-gray-300 mt-2">Displaying ${filtered.length} of ${state.products.length} products • Authentic • Nationwide delivery</p></div>
+            <div class="relative flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+              <div class="relative flex-1 md:w-72"><input type="text" id="search-input" placeholder="Search cream, wig, glasses..." value="${state.searchQuery.replace(/"/g,'&quot;')}" class="w-full pl-11 pr-4 py-3.5 rounded-2xl sm:rounded-full text-base sm:text-sm text-dark bg-white border-0 min-h-[48px]"><span class="absolute left-4 top-4 text-gray-400"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span></div>
+              <select onchange="setSort(this.value)" class="rounded-2xl sm:rounded-full text-base sm:text-sm px-4 py-3.5 bg-white text-dark font-semibold cursor-pointer min-h-[48px] w-full sm:w-auto">
+                <option value="featured" ${state.sortBy==='featured'?'selected':''}>Featured</option>
+                <option value="popular" ${state.sortBy==='popular'?'selected':''}>Most Popular</option>
+                <option value="rated" ${state.sortBy==='rated'?'selected':''}>Top Rated</option>
+                <option value="low" ${state.sortBy==='low'?'selected':''}>Price: Low to High</option>
+                <option value="high" ${state.sortBy==='high'?'selected':''}>Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+            ${CATEGORIES.map(cat=>`<button class="cat-btn shrink-0 text-xs px-5 py-2.5 rounded-full font-bold border transition ${state.selectedCategory===cat?'bg-dark text-white border-dark shadow':'bg-white text-dark border-rose-100 hover:border-rose'}" data-cat="${cat}">${cat}</button>`).join('')}
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+            ${filtered.length>0 ? filtered.map((p,i)=>renderProductCard(p,i)).join('') : `<div class="col-span-full text-center py-16 bg-white rounded-[24px] border border-rose-100 px-4"><p class="mb-3"><svg class="w-10 h-10 mx-auto text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></p><p class="text-sm text-gray-500">No products found for "<strong>${state.searchQuery}</strong>". Try another keyword or category.</p><button onclick="clearFilters()" class="mt-4 text-xs font-bold bg-dark text-white px-6 py-3 rounded-full min-h-[44px]">Clear Filters</button></div>`}
+          </div>
+        </section>`;
+      attachShopEventListeners();
+      const si = document.getElementById('search-input');
+      if(si){ si.focus(); const v=si.value; si.setSelectionRange(v.length,v.length); }
+    }
+    function clearFilters(){ state.selectedCategory='All'; state.searchQuery=''; state.sortBy='featured'; renderShopView(); }
+    function filterCategoryAndShop(cat){ state.selectedCategory=cat; state.searchQuery=''; if(window.location.hash!=='#shop'){ window.location.hash='shop'; } else { renderShopView(); } }
+    function attachShopEventListeners() {
+      document.querySelectorAll('.cat-btn').forEach(btn=>btn.addEventListener('click',e=>{ state.selectedCategory=e.target.dataset.cat; renderShopView(); }));
+      const searchInput=document.getElementById('search-input');
+      if(searchInput){ searchInput.addEventListener('input',e=>{ state.searchQuery=e.target.value; const pos=e.target.selectionStart; renderShopView(); const ni=document.getElementById('search-input'); if(ni){ ni.focus(); try{ni.setSelectionRange(pos,pos);}catch(_){} } }); }
+    }
+
+    /* ---------- CATEGORIES ---------- */
+    function renderCategoriesView() {
+      const app=document.getElementById('app-content');
+      const active=CATEGORIES.filter(c=>c!=='All');
+      app.innerHTML=`
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 animate-fadeUp">
+          <div class="text-center space-y-2"><p class="text-[11px] font-bold uppercase tracking-[0.25em] text-rose">Organised Shopping</p><h1 class="text-4xl font-serif font-bold">Product Collections</h1><p class="text-xs text-gray-500">Tap any department to filter your shopping experience</p></div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            ${active.map(cat=>{ const n=state.products.filter(p=>p.category===cat).length; return `<button onclick="filterCategoryAndShop('${cat}')" class="relative h-44 lg:h-56 rounded-[24px] overflow-hidden text-left group card-img-zoom"><img src="${CATEGORY_IMAGES[cat]}" class="absolute inset-0 w-full h-full object-cover" alt="${cat}"><span class="absolute inset-0 bg-gradient-to-t from-dark/85 to-transparent"></span><span class="absolute bottom-4 left-4 text-white"><span class="font-serif font-bold text-lg block">${cat}</span><span class="text-[11px] opacity-80">${n} items <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></button>`;}).join('')}
+          </div>
+          <div class="space-y-12">
+            ${active.map(cat=>{ const items=state.products.filter(p=>p.category===cat); if(!items.length) return ''; return `
+              <div class="space-y-4"><div class="flex justify-between items-center border-b border-rose-200 pb-3"><div><h2 class="text-2xl font-serif font-bold">${cat}</h2><span class="text-xs text-gray-500 font-medium">${items.length} items in department</span></div><button onclick="filterCategoryAndShop('${cat}')" class="text-xs text-white bg-dark px-5 py-2.5 rounded-full font-bold hover:bg-rose transition">Browse All <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">${items.map((p,i)=>renderProductCard(p,i)).join('')}</div></div>`;}).join('')}
+          </div>
+        </section>`;
+    }
+
+    /* ---------- CARD ---------- */
+    function renderProductCard(p, idx=0, compact=false){
+      const badge = p.rating>=5 ? 'Bestseller' : (p.reviewsCount>150 ? 'Loved' : p.category);
+      return `
+        <div class="group bg-white rounded-[18px] sm:rounded-[24px] overflow-hidden border border-rose-100 shadow-card hover:shadow-lift sm:hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+          <a href="#product-${p.id}" class="block relative ${compact?'aspect-[4/3]':'aspect-square'} overflow-hidden bg-creamdark card-img-zoom">
+            <img src="${p.images[0]}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white/95 text-dark text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-rose-100 max-w-[110px] truncate">${badge}</span>
+            <span class="absolute top-2 right-2 sm:top-3 sm:right-3 w-8 h-8 sm:w-9 sm:h-9 bg-white/95 rounded-full hidden sm:flex items-center justify-center text-sm opacity-0 group-hover:opacity-100 transition hover:bg-rose hover:text-white" title="Wishlist"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21C7 16.5 3 13 3 8.8 3 6 5.2 4 7.8 4c1.7 0 3.2.9 4.2 2.3C13 4.9 14.5 4 16.2 4 18.8 4 21 6 21 8.8c0 4.2-4 7.7-9 12.2z"/></svg></span>
+            ${idx===0?'<span class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-dark text-white text-[9px] sm:text-[10px] font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full inline-flex items-center gap-1"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="#B9965A"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg>Top pick</span>':''}
+          </a>
+          <div class="p-3 sm:p-5 flex flex-col flex-grow gap-1">
+            <div class="flex items-center gap-1 text-[10px] sm:text-[11px]"><span class="tracking-tight">${stars(p.rating)}</span><span class="text-gray-400 font-semibold truncate">${p.rating} (${p.reviewsCount})</span></div>
+            <a href="#product-${p.id}" class="font-serif font-bold text-dark text-[13px] sm:text-[16px] leading-snug hover:text-rose transition line-clamp-1">${p.name}</a>
+            <p class="hidden sm:block text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed">${p.description}</p>
+            <div class="mt-2 sm:mt-4 pt-2.5 sm:pt-4 border-t border-rose-100/70 flex items-center justify-between gap-2 mt-auto">
+              <div class="min-w-0"><span class="font-extrabold text-dark text-[13px] sm:text-[15px] block truncate">${naira(p.price)}</span><span class="hidden sm:block text-[10px] text-gray-400 font-semibold uppercase tracking-wider truncate">${p.shades? p.shades[0]: p.category}</span></div>
+              <button onclick="addToCart('${p.id}')" aria-label="Add ${p.name} to bag" class="bg-dark text-white text-[11px] sm:text-xs px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold hover:bg-rose active:scale-95 transition shadow flex items-center gap-1 shrink-0 min-h-[36px]"><svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Bag</button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    /* ---------- DETAIL ---------- */
+    function renderProductDetail(id){
+      const p=state.products.find(x=>x.id===id);
+      const app=document.getElementById('app-content');
+      if(!p){ app.innerHTML=`<div class="text-center py-20"><p class="text-4xl mb-3"><svg class="w-10 h-10 mx-auto text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg></p><p>Product not found.</p><a href="#shop" class="text-rose underline font-bold">Return to Shop</a></div>`; return; }
+      const related=state.products.filter(x=>x.category===p.category && x.id!==p.id).slice(0,3);
+      app.innerHTML=`
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 py-8 animate-fadeUp">
+          <nav class="text-[11px] font-semibold text-gray-400 mb-5"><a href="#home" class="hover:text-rose">Home</a> / <a href="#shop" class="hover:text-rose">Shop</a> / <a href="#categories" class="hover:text-rose">${p.category}</a> / <span class="text-dark">${p.name}</span></nav>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div class="space-y-3">
+              <div class="aspect-square rounded-[28px] overflow-hidden bg-white border border-rose-100 shadow-card card-img-zoom relative">
+                <img src="${p.images[0]}" alt="${p.name}" class="w-full h-full object-cover">
+                <span class="absolute top-4 left-4 bg-white/95 text-[10px] font-bold uppercase px-3 py-1.5 rounded-full">${p.category}</span>
+              </div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="bg-white border border-rose-100 rounded-2xl p-3 text-center"><p class="text-lg"><svg class="w-5 h-5 mx-auto text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19C5 9 13 5 20 5c0 8-4 14-13 14M5 19c3-5 7-9 11-11"/></svg></p><p class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mt-1">Skin Safe</p></div>
+                <div class="bg-white border border-rose-100 rounded-2xl p-3 text-center"><p class="text-lg"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14v9H1zM15 11h4l3 3v3h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></p><p class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mt-1">Fast Delivery</p></div>
+                <div class="bg-white border border-rose-100 rounded-2xl p-3 text-center"><p class="text-lg"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></p><p class="text-[10px] font-bold uppercase tracking-wider text-gray-500 mt-1">Authentic</p></div>
+              </div>
+            </div>
+            <div class="space-y-5">
+              <div>
+                <span class="text-[11px] uppercase tracking-[0.25em] text-gold font-bold">${p.category}</span>
+                <h1 class="text-3xl sm:text-4xl font-serif font-bold mt-1 leading-tight">${p.name}</h1>
+                <div class="flex items-center gap-2 mt-2 text-xs"><span>${stars(p.rating)}</span><strong>${p.rating}</strong><span class="text-gray-400">• ${p.reviewsCount} verified reviews</span></div>
+                <p class="text-3xl font-extrabold mt-3">${naira(p.price)}</p>
+                <p class="text-[11px] text-emerald-600 font-bold mt-1"><span class="inline-block w-2 h-2 rounded-full bg-emerald-500 align-middle"></span> In Stock — ships from Kwara State</p>
+              </div>
+              <p class="text-sm text-gray-600 leading-relaxed bg-white border border-rose-100 rounded-2xl p-5">${p.description}</p>
+              ${p.shades?`<div><label class="block text-[11px] font-bold uppercase tracking-wider mb-2">Option / Size / Shade</label><select id="shade-select" class="w-full border border-gray-200 rounded-2xl p-3.5 text-sm bg-white">${p.shades.map(s=>`<option value="${s}">${s}</option>`).join('')}</select></div>`:''}
+              <div class="flex gap-3">
+                <div class="flex items-center border border-gray-200 rounded-full bg-white overflow-hidden">
+                  <button onclick="detailQty(-1)" class="w-11 h-[52px] font-bold hover:text-rose"><svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+                  <span id="detail-qty" class="w-8 text-center font-bold text-sm">1</span>
+                  <button onclick="detailQty(1)" class="w-11 h-[52px] font-bold hover:text-rose"><svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+                </div>
+                <button onclick="addToCart('${p.id}', getDetailQty())" class="flex-1 bg-dark text-white py-3.5 rounded-full font-bold hover:bg-rose transition shadow text-sm">Add to Bag — ${naira(p.price)}</button>
+              </div>
+              <a href="https://wa.me/23408186729201?text=${encodeURIComponent('Hello 1st Lady Cosmetic! I have a question about '+p.name+' ('+naira(p.price)+')')}" target="_blank" class="block text-center border-2 border-[#25D366] text-[#1a9e4b] hover:bg-[#25D366] hover:text-white py-3 rounded-full text-sm font-bold transition"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg> Ask About This Product on WhatsApp</a>
+              <div class="grid sm:grid-cols-2 gap-3 text-[13px]">
+                <div class="bg-white border border-rose-100 rounded-2xl p-5"><h4 class="font-bold uppercase text-[11px] tracking-wider mb-1.5">Ingredients & Materials</h4><p class="text-gray-500 leading-relaxed">${p.ingredients}</p></div>
+                <div class="bg-white border border-rose-100 rounded-2xl p-5"><h4 class="font-bold uppercase text-[11px] tracking-wider mb-1.5">How to Use</h4><p class="text-gray-500 leading-relaxed">${p.usage}</p></div>
+              </div>
+              <a href="#shop" class="text-xs font-bold text-rose hover:underline"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to Shop Catalog</a>
+            </div>
+          </div>
+          ${related.length?`<div class="mt-14"><h2 class="text-2xl font-serif font-bold mb-5">You may also love</h2><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">${related.map((r,i)=>renderProductCard(r,i)).join('')}</div></div>`:''}
+        </section>`;
+      window._detailQty=1;
+    }
+    function getDetailQty(){ return window._detailQty||1; }
+    function detailQty(d){ window._detailQty=Math.max(1,(window._detailQty||1)+d); const el=document.getElementById('detail-qty'); if(el) el.textContent=window._detailQty; }
+
+    /* ---------- CHECKOUT ---------- */
+    function renderCheckoutView(){
+      const app=document.getElementById('app-content');
+      if(state.cart.length===0){ app.innerHTML=`<div class="max-w-md mx-auto text-center py-20 px-4 space-y-4 animate-fadeUp"><p class="text-5xl"><svg class="w-10 h-10 mx-auto text-rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg></p><h2 class="text-2xl font-serif font-bold">Your Bag is Empty</h2><p class="text-sm text-gray-500">Add some glow before checking out.</p><a href="#shop" class="inline-block bg-dark text-white px-8 py-3.5 rounded-full text-sm font-bold hover:bg-rose transition">Start Shopping <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>`; return; }
+      const subtotal=state.cart.reduce((s,i)=>s+(i.price*i.quantity),0);
+      app.innerHTML=`
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12 animate-fadeUp">
+          <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-rose">Almost yours</p>
+          <h1 class="text-4xl font-serif font-bold mb-8">Checkout</h1>
+          <div class="grid grid-cols-1 md:grid-cols-[1.2fr_.8fr] gap-6 items-start">
+            <form id="checkout-form" class="space-y-4 bg-white p-6 sm:p-8 rounded-[24px] border border-rose-100 shadow-card">
+              <h2 class="font-bold text-sm uppercase tracking-wider text-gold">1. Delivery Information</h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input type="text" id="cust-name" placeholder="Full Name" required class="sm:col-span-2 w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream">
+                <input type="email" id="cust-email" placeholder="Email Address" required class="w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream">
+                <input type="tel" id="cust-phone" placeholder="Phone Number" required class="w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream">
+                <input type="text" id="cust-address" placeholder="Delivery Address" required class="sm:col-span-2 w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream">
+                <select id="state" required class="sm:col-span-2 w-full border border-gray-200 p-3.5 rounded-2xl text-sm bg-cream text-gray-600">
+                  <option value="" selected disabled hidden>Select State</option>
+                  <option value="Lagos">Lagos State</option><option value="Abuja">Abuja (FCT)</option><option value="Rivers">Rivers</option><option value="Oyo">Oyo</option><option value="Kwara state">Kwara</option><option value="Ibadan">Ibadan</option><option value="Offa">Offa</option><option value="Osun">Osun</option><option value="Kogi">Kogi</option><option value="Edo">Edo</option><option value="Delta">Delta</option><option value="Enugu">Enugu</option><option value="Other">Other State</option>
+                </select>
+              </div>
+              <p class="text-[11px] text-gray-400">Pay on delivery / transfer confirmation via WhatsApp: +23408186729201</p>
+              <button type="submit" class="w-full bg-dark text-white py-4 rounded-full font-bold hover:bg-rose transition">Confirm Order — ${naira(subtotal)}</button>
+            </form>
+            <div class="bg-white p-6 rounded-[24px] border border-rose-100 shadow-card space-y-4 sticky top-24">
+              <h2 class="font-bold text-sm uppercase tracking-wider text-gold">Order Summary</h2>
+              <div class="divide-y divide-rose-100/70 text-[13px] max-h-64 overflow-y-auto pr-1">
+                ${state.cart.map(item=>`<div class="py-2.5 flex gap-3 items-center"><img src="${item.images[0]}" class="w-12 h-12 rounded-xl object-cover" alt="${item.name}"><div class="flex-1"><p class="font-bold leading-tight">${item.name}</p><p class="text-gray-400 text-xs">x${item.quantity}</p></div><span class="font-bold">${naira(item.price*item.quantity)}</span></div>`).join('')}
+              </div>
+              <div class="border-t border-rose-100 pt-4 flex justify-between font-extrabold"><span>Total Due:</span><span>${naira(subtotal)}</span></div>
+              <p class="text-[11px] text-gray-400">Free delivery on orders over ₦800,000.</p>
+            </div>
+          </div>
+        </section>`;
+      document.getElementById('checkout-form').addEventListener('submit',e=>{
+        e.preventDefault();
+        const ref='GB-'+Date.now();
+        const name=document.getElementById('cust-name').value;
+        showToast('Order '+ref+' placed. Thank you, '+name.split(' ')[0]+'!');
+        state.cart=[]; updateCartUI();
+        setTimeout(()=>{ window.location.hash='home'; }, 900);
+      });
+    }
+
+    /* ---------- TRACK ---------- */
+    function renderTrackView(){
+      const app=document.getElementById('app-content');
+      app.innerHTML=`
+        <section class="max-w-xl mx-auto px-4 py-16 text-center space-y-6 animate-fadeUp">
+          <span class="inline-block text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-700 bg-emerald-50 border border-emerald-100 px-4 py-2 rounded-full"><span class="inline-block w-2 h-2 rounded-full bg-emerald-500 align-middle"></span> Live dispatch updates</span>
+          <h1 class="text-4xl font-serif font-bold">Track Delivery Status</h1>
+          <p class="text-sm text-gray-500">Enter your order reference (e.g. GB-1700000000) or chat with us on WhatsApp.</p>
+          <div class="bg-white border border-rose-100 rounded-[24px] p-6 shadow-card space-y-3">
+            <div class="flex gap-2"><input type="text" id="track-input" placeholder="e.g. GB-1700000000" class="flex-1 border border-gray-200 p-3.5 rounded-full text-sm bg-cream"><button onclick="showToast('Order Status: Paid & Processing for dispatch.')" class="bg-dark text-white px-7 rounded-full text-sm font-bold hover:bg-rose transition">Search</button></div>
+            <a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20want%20to%20track%20my%20order." target="_blank" class="block border-2 border-[#25D366] text-[#1a9e4b] font-bold py-3 rounded-full text-sm hover:bg-[#25D366] hover:text-white transition">Track via WhatsApp <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg></a>
+            <p class="text-[11px] text-gray-400">Or email igwejiokefrancis@gmail.com with your reference.</p>
+          </div>
+        </section>`;
+    }
+
+    /* ---------- CART ---------- */
+    function addToCart(id, qty=1){
+      const product=state.products.find(p=>p.id===id);
+      if(!product) return;
+      const existing=state.cart.find(i=>i.id===id);
+      if(existing){ existing.quantity+=qty; } else { state.cart.push({...product, quantity: qty}); }
+      updateCartUI(); toggleCart(true); showToast(product.name+' added to bag <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>');
+    }
+    function updateCartUI(){
+      const totalCount=state.cart.reduce((s,i)=>s+i.quantity,0);
+      const cc=document.getElementById('cart-count'); if(cc) cc.innerText=totalCount;
+      const subtotal=state.cart.reduce((s,i)=>s+(i.price*i.quantity),0);
+      const st=document.getElementById('cart-subtotal'); if(st) st.innerText=naira(subtotal);
+      const bar=document.getElementById('free-ship-bar'); if(bar) bar.style.width=Math.min(100,(subtotal/800000)*100)+'%';
+      const msg=document.getElementById('free-ship-msg');
+      if(msg){ msg.innerHTML = subtotal>=800000 ? '<strong class="text-emerald-600"><svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> You unlocked FREE delivery!</strong>' : (subtotal>0 ? `Add <strong>${naira(800000-subtotal)}</strong> more for FREE delivery.` : 'Taxes and shipping calculated at checkout.'); }
+      const container=document.getElementById('cart-items-container');
+      if(!container) return;
+      if(state.cart.length===0){ container.innerHTML=`<div class="text-center py-12"><p class="text-5xl mb-3"><svg class="w-10 h-10 mx-auto text-rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg></p><p class="font-serif font-bold text-lg">Your bag is empty</p><p class="text-xs text-gray-400 mt-1 mb-5">Discover body creams, wigs & glow essentials.</p><button onclick="toggleCart(false); window.location.hash='shop'" class="bg-dark text-white text-xs font-bold px-6 py-3 rounded-full">Start Shopping <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>`; return; }
+      container.innerHTML=state.cart.map(item=>`
+        <div class="flex gap-3 items-center bg-white border border-rose-100 rounded-2xl p-3">
+          <img src="${item.images[0]}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover shrink-0">
+          <div class="flex-1 min-w-0 text-xs">
+            <h4 class="font-bold text-dark truncate">${item.name}</h4>
+            <p class="text-gray-500 font-semibold">${naira(item.price)}</p>
+            <div class="flex items-center gap-2 mt-2">
+              <button onclick="changeQty('${item.id}',-1)" class="w-7 h-7 rounded-full border border-rose-100 bg-cream font-bold hover:bg-rose hover:text-white transition"><svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+              <span class="font-bold min-w-[16px] text-center">${item.quantity}</span>
+              <button onclick="changeQty('${item.id}',1)" class="w-7 h-7 rounded-full border border-rose-100 bg-cream font-bold hover:bg-rose hover:text-white transition"><svg class="w-3.5 h-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+              <button onclick="changeQty('${item.id}',-999)" class="ml-auto text-gray-300 hover:text-red-500 text-sm" title="Remove"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/></svg></button>
+            </div>
+          </div>
+          <span class="text-xs font-extrabold">${naira(item.price*item.quantity)}</span>
+        </div>`).join('');
+    }
+    function changeQty(id,delta){
+      const item=state.cart.find(i=>i.id===id);
+      if(item){ item.quantity+=delta; if(item.quantity<=0){ state.cart=state.cart.filter(i=>i.id!==id); } }
+      updateCartUI();
+    }
+    function setupCartDrawer(){
+      document.getElementById('open-cart-btn').addEventListener('click',()=>toggleCart(true));
+      document.getElementById('close-cart-btn').addEventListener('click',()=>toggleCart(false));
+      document.getElementById('cart-backdrop').addEventListener('click',()=>toggleCart(false));
+      document.getElementById('proceed-checkout-btn').addEventListener('click',()=>{ toggleCart(false); window.location.hash='checkout'; });
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape') toggleCart(false); });
+    }
+    function toggleCart(open){
+      const drawer=document.getElementById('cart-drawer');
+      const backdrop=document.getElementById('cart-backdrop');
+      const panel=document.getElementById('cart-panel');
+      if(open){ drawer.classList.remove('invisible'); requestAnimationFrame(()=>{ backdrop.classList.add('opacity-100'); panel.classList.remove('translate-x-full'); }); }
+      else { backdrop.classList.remove('opacity-100'); panel.classList.add('translate-x-full'); setTimeout(()=>drawer.classList.add('invisible'),300); }
+    }
+  </script>
+</body>
+</html>
