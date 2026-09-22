@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>1st Lady Cosmetic — Premium Beauty, Skincare, Wigs & Essentials</title>
+  <meta name="description" content="1st Lady Cosmetic — Premium African skincare, luxury hair & wigs, designer eyewear, body butter, makeup, perfume and baby care. Taiwo Isale, Kwara State, Nigeria.">
+  <meta name="theme-color" content="#20191B">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B76E79'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3E1st%3C/text%3E%3Ccircle cx='48' cy='16' r='6' fill='%23B9965A'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B76E79'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3E1st%3C/text%3E%3C/svg%3E">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --rose:#B76E79; --rose-dark:#8E4D58; --rose-light:#F8E9E9; --rose-50:#FFFAF8;
+      --cream:#FFFAF8; --cream-dark:#F6EEEB; --dark:#20191B; --ink:#302527;
+      --gold:#B9965A; --wa:#25D366;
+      --shadow-card:0 10px 30px rgba(32,25,27,.07);
+      --shadow-lift:0 20px 60px rgba(183,110,121,.25);
+      --radius:20px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--dark)}
+    h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+    img{max-width:100%}
+    .text-rose{color:var(--rose)!important}
+    .text-gold{color:var(--gold)!important}
+    .bg-cream{background:var(--cream)!important}
+    .bg-rose-light{background:var(--rose-light)!important}
+    .bg-dark-custom{background:var(--dark)!important}
+    .btn-rose{background:var(--rose);color:#fff;border:none;border-radius:50rem;font-weight:700}
+    .btn-rose:hover,.btn-rose:focus{background:var(--rose-dark);color:#fff}
+    .btn-dark-custom{background:var(--dark);color:#fff;border:none;border-radius:50rem;font-weight:700}
+    .btn-dark-custom:hover{background:var(--rose);color:#fff}
+    .btn-wa{background:var(--wa);color:#fff;border:none;border-radius:50rem;font-weight:700}
+    .btn-wa:hover{background:#1EBE5D;color:#fff}
+    .pill{border-radius:50rem}
+    .card-beauty{border:1px solid #f3e2e2;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow-card);transition:transform .25s,box-shadow .25s;height:100%}
+    .card-beauty:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+    .card-beauty .p-img{aspect-ratio:1/1;overflow:hidden;background:var(--cream-dark)}
+    .card-beauty .p-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+    .card-beauty:hover .p-img img{transform:scale(1.07)}
+    .badge-soft{font-size:.68rem;font-weight:700}
+    .hero-wrap{position:relative;overflow:hidden}
+    .hero-dots{background-image:radial-gradient(#E9CFCF 1.2px,transparent 1.2px);background-size:22px 22px;position:absolute;inset:0;opacity:.6;mask-image:radial-gradient(ellipse 90% 80% at 50% 20%,black 40%,transparent 75%)}
+    .hero-img{border-radius:28px;border:6px solid #fff;box-shadow:var(--shadow-lift);object-fit:cover;width:100%;height:340px}
+    @media(min-width:576px){.hero-img{height:420px}}
+    @media(min-width:992px){.hero-img{height:540px}}
+    .float-badge{background:#fff;border:1px solid #f3e2e2;border-radius:16px;box-shadow:var(--shadow-lift)}
+    .marquee{overflow:hidden;white-space:nowrap}
+    .marquee-inner{display:inline-block;animation:marq 26s linear infinite;font-weight:800;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#5b4a4d}
+    @keyframes marq{to{transform:translateX(-50%)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+    .fade-up{animation:fadeUp .55s ease both}
+    .cat-tile{position:relative;border-radius:20px;overflow:hidden;border:none;height:210px;text-align:left;color:#fff;padding:0}
+    @media(min-width:576px){.cat-tile{height:250px}}
+    .cat-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .cat-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(32,25,27,.88),rgba(32,25,27,.15),transparent)}
+    .cat-tile span{position:relative;z-index:1}
+    .cat-mini{background:#fff;border:1px solid #f3e2e2;border-radius:16px}
+    .ritual{background:linear-gradient(100deg,rgba(32,25,27,.96),rgba(32,25,27,.65)),url('https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=1600') center/cover;border-radius:26px}
+    .float-contact{position:fixed;right:1rem;bottom:max(1.25rem,env(safe-area-inset-bottom));z-index:1050;display:flex;flex-direction:column;gap:.6rem}
+    .float-contact a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:var(--shadow-lift);font-size:1.4rem}
+    .navbar-beauty{background:rgba(255,250,248,.92);backdrop-filter:blur(16px);border-bottom:1px solid #f3e2e2}
+    .logo-mark{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem}
+    .form-control,.form-select{border-radius:14px;padding:.8rem 1rem}
+    .form-control:focus,.form-select:focus{border-color:var(--rose);box-shadow:0 0 0 .25rem rgba(183,110,121,.15)}
+    .offcanvas-beauty{border-radius:22px 0 0 22px}
+    @media(max-width:576px){.offcanvas-beauty{border-radius:0}.hero-img{border-width:4px}input,select,textarea{font-size:16px!important}}
+    .clamp-1{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+    .clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Announcement -->
+  <div class="bg-dark-custom text-white text-center small py-2 px-3 text-uppercase fw-semibold" style="letter-spacing:.15em;font-size:.7rem">
+    <i class="bi bi-stars me-1"></i> Free Delivery Across Nigeria on Orders Over 800,000 <span class="opacity-25 mx-1">|</span> <span style="color:#F8E9E9">People</span>
+  </div>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-beauty">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <span class="logo-mark">1<sup style="font-size:.6rem">st</sup></span>
+        <span class="lh-1">
+          <span class="d-block serif fw-bold fs-5 text-dark">1st Lady <em class="text-rose">Cosmetic</em></span>
+          <span class="d-none d-sm-block text-muted" style="font-size:.62rem;letter-spacing:.28em">BEAUTY • HAIR • GLOW</span>
+        </span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <a href="#shop" class="btn btn-light rounded-circle d-none d-sm-inline-flex align-items-center justify-content-center border" style="width:44px;height:44px" title="Search products"><i class="bi bi-search"></i></a>
+        <button id="open-cart-btn" class="btn btn-dark-custom px-3 py-2 d-flex align-items-center gap-2" type="button">
+          <i class="bi bi-bag"></i><span class="d-none d-sm-inline">Bag</span>
+          <span id="cart-count" class="badge rounded-pill" style="background:var(--rose)">0</span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav fw-semibold small">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shop">Shop Catalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#track"><span class="badge bg-success rounded-pill me-1">&nbsp;</span>Track Order</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main id="app-content" class="flex-grow-1"></main>
+
+  <!-- Floating contact -->
+  <div class="float-contact">
+    <a href="https://wa.me/+2348186729201?text=Hello%201LadyCosmetic!%20I%20have%20an%20inquiry%20about%20a%20product." target="_blank" rel="noopener" title="Chat on WhatsApp" style="background:#25D366"><i class="bi bi-whatsapp"></i></a>
+    <a href="mailto:igwejiokefrancis@gmail.com?subject=Inquiry%20from%20GlowBeauty%20Website" title="Email Us via Gmail" class="bg-dark"><i class="bi bi-envelope"></i></a>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index:1080">
+    <div id="toast" class="toast align-items-center text-white border-0" role="status" style="background:var(--dark);border-radius:16px">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success fs-5"></i><span id="toast-msg">Added to bag</span></div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart drawer (Bootstrap offcanvas) -->
+  <div class="offcanvas offcanvas-end offcanvas-beauty" tabindex="-1" id="cart-drawer" style="width:min(420px,100%)">
+    <div class="offcanvas-header bg-white border-bottom">
+      <div>
+        <h5 class="offcanvas-title serif fw-bold mb-0">Your Shopping Bag</h5>
+        <small class="text-muted">Free delivery over ₦800,000</small>
+      </div>
+      <button id="close-cart-btn" type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body bg-cream">
+      <div id="cart-items-container" class="d-flex flex-column gap-3"></div>
+    </div>
+    <div class="offcanvas-footer bg-white border-top p-3">
+      <div class="d-flex justify-content-between small"><span class="text-muted">Subtotal</span><strong id="cart-subtotal" class="fs-5">₦0</strong></div>
+      <div class="progress my-2" style="height:6px"><div id="free-ship-bar" class="progress-bar" style="width:0%;background:linear-gradient(90deg,var(--rose),var(--gold))"></div></div>
+      <p id="free-ship-msg" class="text-muted" style="font-size:.75rem">Taxes and shipping calculated at checkout.</p>
+      <button id="proceed-checkout-btn" class="btn btn-dark-custom w-100 py-3">Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i></button>
+      <button class="btn btn-link w-100 text-muted text-decoration-none small" data-bs-dismiss="offcanvas">Continue shopping</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-light mt-5" style="background:var(--dark)">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-md-3">
+          <h3 class="serif fw-bold h4">1st lady<span class="text-rose"> Cosmetic</span></h3>
+          <p class="text-secondary small">Premium African skincare, luxury hair &amp; wigs, designer eyewear, body butter, and gentle baby care.</p>
+          <span class="badge bg-secondary bg-opacity-25 me-1"><i class="bi bi-star-fill text-warning me-1"></i>4.9 Rated</span>
+          <span class="badge bg-secondary bg-opacity-25"><i class="bi bi-patch-check-fill text-success me-1"></i>100% Authentic</span>
+        </div>
+        <div class="col-6 col-md-3">
+          <h6 class="text-uppercase fw-bold text-gold small">Shop Departments</h6>
+          <ul class="list-unstyled small d-grid gap-2">
+            <li><a href="#shop" class="link-light link-underline-opacity-0">Skincare &amp; Serums</a></li>
+            <li><a href="#shop" class="link-light link-underline-opacity-0">Body Creams &amp; Lotions</a></li>
+            <li><a href="#shop" class="link-light link-underline-opacity-0">Wigs &amp; Hair Products</a></li>
+            <li><a href="#shop" class="link-light link-underline-opacity-0">Eyewear &amp; Glasses</a></li>
+            <li><a href="#shop" class="link-light link-underline-opacity-0">Baby &amp; Mom Care</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h6 class="text-uppercase fw-bold text-gold small">Instant Contact</h6>
+          <ul class="list-unstyled small d-grid gap-2">
+            <li><a class="link-light link-underline-opacity-0" target="_blank" href="https://wa.me/23408186729201"><i class="bi bi-whatsapp text-success me-2"></i>WhatsApp: +23408186729201</a></li>
+            <li><a class="link-light link-underline-opacity-0 text-break" href="mailto:hello@glowbeauty.ng"><i class="bi bi-envelope text-rose me-2"></i>Gmail / Email: igwejiokefrancis@gmail.com</a></li>
+            <li><a class="link-light link-underline-opacity-0" href="#track">Track Delivery <i class="bi bi-arrow-right"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="text-uppercase fw-bold text-gold small">Location &amp; Hours</h6>
+          <p class="small text-secondary mb-2">Taiwo Isale, Kwara State, Nigeria.<br>Mon - Sat: 9:00 AM - 7:00 PM<br>Customer Service Active 24/7 via WhatsApp &amp; Email.</p>
+          <a href="#contact" class="btn btn-light btn-sm rounded-pill fw-bold">Get Directions</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-3 border-top border-secondary border-opacity-25 small text-secondary">&copy; 2026 1st Lady Cosmetics Ltd. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const initialProducts = [
+      { id: "prod-sk-01", name: "Velvet Rose Hydrating Serum", category: "Skincare", price: 14500, rating: 4.9, reviewsCount: 128, images: ["https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"], shades: ["30ml Dropper"], description: "Infused with Damask Rose water, hyaluronic acid, and botanical squalane to deeply hydrate dry skin.", ingredients: "Rose Water, Hyaluronic Acid, Niacinamide, Squalane", usage: "Apply 3-4 drops morning and night after cleansing." },
+      { id: "prod-sk-02", name: "Vitamin C Brightening Face Cream", category: "Skincare", price: 16000, rating: 4.8, reviewsCount: 95, images: ["https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=800"], shades: ["50ml Jar"], description: "Rejuvenating daily face moisturizer enriched with 15% Vitamin C and Ferulic Acid.", ingredients: "Ascorbic Acid, Ferulic Acid, Aloe Vera, Glycerin", usage: "Smooth over face and neck morning and evening." },
+      { id: "prod-sk-03", name: "Snail Mucin Repair Gel Moisturizer", category: "Skincare", price: 13500, rating: 4.9, reviewsCount: 112, images: ["https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800"], shades: ["100ml Tube"], description: "Lightweight gel moisturizer formulated to soothe irritated skin barrier and repair blemishes.", ingredients: "92% Snail Secretion Filtrate, Sodium Hyaluronate, Allantoin", usage: "Apply evenly to face as the final step of skincare." },
+      { id: "prod-sk-04", name: "Gentle Tea Tree Cleansing Gel", category: "Skincare", price: 9500, rating: 4.7, reviewsCount: 84, images: ["assets/images/images.jpg"], shades: ["200ml Pump"], description: "Purifying gel cleanser that unclogs pores and regulates oil production without stripping.", ingredients: "Tea Tree Leaf Oil, Salicylic Acid, Green Tea Extract", usage: "Lather with water and gently massage over face. Rinse thoroughly." },
+      { id: "prod-sk-05", name: "Invisible UV Shield Sunscreen SPF 50", category: "Skincare", price: 12000, rating: 5.0, reviewsCount: 204, images: ["assets/images/black.jpg"], shades: ["50ml Tube"], description: "Zero white-cast broad spectrum facial sunscreen suitable for dark and sensitive skin.", ingredients: "Zinc Oxide, Octocrylene, Vitamin E, Centella Asiatica", usage: "Apply generously 15 minutes before sun exposure." },
+      { id: "prod-bc-01", name: "Raw Shea Butter Radiance Body Cream", category: "Body Care", price: 11000, rating: 4.9, reviewsCount: 190, images: ["assets/images/body.webp"], shades: ["500ml Tub"], description: "Deep moisturizing whipped body cream enriched with unrefined shea butter, cocoa butter, and coconut oil.", ingredients: "Raw Shea Butter, Coconut Oil, Cocoa Butter, Vitamin E", usage: "Smooth all over body after showering for 24-hour hydration." },
+      { id: "prod-bc-02", name: "Niacinamide Brightening Body Lotion", category: "Body Care", price: 13500, rating: 4.7, reviewsCount: 88, images: ["https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800"], shades: ["400ml Pump"], description: "Fast-absorbing body lotion designed to fade dark spots and unify hyperpigmentation.", ingredients: "Niacinamide (5%), Alpha Arbutin, Licorice Root Extract", usage: "Apply daily on body after bathing." },
+      { id: "prod-bc-03", name: "Warm Vanilla & Cocoa Body Butter Lotion", category: "Body Care", price: 12500, rating: 4.9, reviewsCount: 140, images: ["https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=800"], shades: ["350ml Tub"], description: "Luxurious cocoa body butter with a long-lasting gourmand sweet vanilla scent.", ingredients: "Cocoa Seed Butter, Almond Oil, Vanilla Extract, Glycerin", usage: "Massage into skin focusing on dry elbows, knees, and feet." },
+      { id: "prod-bc-04", name: "Exfoliating Turmeric & Honey Body Scrub", category: "Body Care", price: 10500, rating: 4.8, reviewsCount: 76, images: ["https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=800"], shades: ["300g Jar"], description: "Polishing sugar body scrub infused with organic turmeric powder to brighten rough skin.", ingredients: "Cane Sugar, Organic Turmeric, Raw Honey, Jojoba Oil", usage: "Gently scrub damp skin 2-3 times a week." },
+      { id: "prod-hc-01", name: "Chebe & Castor Growth Hair Cream", category: "Hair Care & Wigs", price: 8500, rating: 4.9, reviewsCount: 164, images: ["https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=800"], shades: ["250g Jar"], description: "Rich conditioning hair cream with authentic Chadian Chebe powder to lock in length.", ingredients: "Raw Shea Butter, Chebe Powder, Black Castor Oil, Peppermint Oil", usage: "Apply to damp hair sections to lock in moisture before styling." },
+      { id: "prod-hc-02", name: "Luxe HD Lace Front Body Wave Wig", category: "Hair Care & Wigs", price: 145000, rating: 5.0, reviewsCount: 78, images: ["https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800"], shades: ["22 Inches", "26 Inches", "30 Inches"], description: "100% Virgin Human Hair HD transparent lace wig with natural hairline pre-plucked.", ingredients: "100% Unprocessed Human Virgin Hair", usage: "Install with wig adhesive or wear glueless with adjustable strap." },
+      { id: "prod-hc-03", name: "Straight Bone Straight HD Closure Wig", category: "Hair Care & Wigs", price: 130000, rating: 4.9, reviewsCount: 92, images: ["https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800"], shades: ["20 Inches", "24 Inches"], description: "Silky bone straight hair wig that stays completely flat and tangles-free.", ingredients: "100% Raw Vietnamese Virgin Hair", usage: "Comb through with wide-tooth comb and flat iron up to 230°C." },
+      { id: "prod-hc-04", name: "Deep Wave Curly Human Hair Bob Wig", category: "Hair Care & Wigs", price: 85000, rating: 4.8, reviewsCount: 61, images: ["https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=800"], shades: ["12 Inches", "14 Inches"], description: "Bouncy deep wave curly bob wig with breathable wig cap structure.", ingredients: "100% Virgin Hair", usage: "Spritz with water and leave-in conditioner to reactivate curls." },
+      { id: "prod-hc-05", name: "Rosemary & Biotin Scalp Elixir Hair Oil", category: "Hair Care & Wigs", price: 7500, rating: 4.9, reviewsCount: 180, images: ["https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&q=80&w=800"], shades: ["100ml Bottle"], description: "Nutrient-dense scalp hair growth oil that stimulates follicles and prevents shedding.", ingredients: "Rosemary Essential Oil, Biotin, Argan Oil, Batana Oil", usage: "Massage into scalp 3-4 times weekly." },
+      { id: "prod-eg-01", name: "Glamour Oversized Anti-UV Sunglasses", category: "Accessories & Glasses", price: 15000, rating: 4.8, reviewsCount: 64, images: ["https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800"], shades: ["Gold Frame / Black Tint", "Rose Gold Tint"], description: "Statement oversized women's sunglasses with UV400 protective lenses.", ingredients: "UV400 Polycarbonate Lenses, Alloy Frame", usage: "Wear outdoors for eye protection and style statement." },
+      { id: "prod-eg-02", name: "Cat-Eye Designer Blue Light Glasses", category: "Accessories & Glasses", price: 12500, rating: 4.7, reviewsCount: 45, images: ["https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=800"], shades: ["Clear Lens / Tortoiseshell Frame"], description: "Fashionable anti-blue light blocking glasses to protect eyes from digital screens.", ingredients: "Anti-Reflective Lenses, Acetate Frame", usage: "Wear while working on laptop, phone, or TV." },
+      { id: "prod-bm-01", name: "Gentle Soothing Baby Moisture Cream", category: "Baby & Mom", price: 8000, rating: 5.0, reviewsCount: 112, images: ["https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&q=80&w=800"], shades: ["250ml Bottle"], description: "Pediatrician-tested ultra-gentle baby moisturizing lotion formulated for sensitive newborn skin.", ingredients: "Colloidal Oatmeal, Chamomile Extract, Organic Calendula", usage: "Gently massage onto clean baby skin after bath." },
+      { id: "prod-bm-02", name: "Baby Soft Herbal Hair & Scalp Oil", category: "Baby & Mom", price: 6500, rating: 4.9, reviewsCount: 85, images: ["https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&q=80&w=800"], shades: ["150ml Dropper"], description: "Tear-free scalp oil that clears cradle cap and promotes soft baby hair growth.", ingredients: "Jojoba Seed Oil, Sweet Almond Oil, Chamomile Extract", usage: "Apply a small drop to baby scalp and gently comb through." },
+      { id: "prod-mk-01", name: "Luminous Gold Liquid Foundation", category: "Makeup", price: 18500, rating: 4.8, reviewsCount: 210, images: ["https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&q=80&w=800"], shades: ["Cocoa Gold 01", "Honey Bronze 02", "Warm Caramel 03"], description: "Medium buildable coverage foundation that melts seamlessly into rich skin tones.", ingredients: "Water, Isododecane, Titanium Dioxide, Vitamin E", usage: "Blend onto skin using a wet sponge or foundation brush." },
+      { id: "prod-mk-02", name: "Satin Velvet Matte Lipstick", category: "Makeup", price: 7500, rating: 4.8, reviewsCount: 178, images: ["https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=800"], shades: ["Velvet Nude", "Lagos Plum", "Royal Red"], description: "Ultra-pigmented matte lipstick that glides on smoothly without drying lips.", ingredients: "Dimethicone, Synthetic Wax, Shea Butter, Mica", usage: "Apply directly starting from lip center outwards." },
+      { id: "prod-pf-01", name: "Oud Royale Extrait de Parfum", category: "Perfume", price: 38000, rating: 5.0, reviewsCount: 94, images: ["https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800"], shades: ["50ml EDP Spray"], description: "Opulent blend of Cambodian Oud, Amber, Vanilla, and fresh Rose notes.", ingredients: "Alcohol Denat, Fragrance (Parfum), Cambodian Oud Extract", usage: "Spritz on pulse points behind ears and wrists." }
+    ];
+    let state = { products: initialProducts, cart: [], currentView: 'home', selectedCategory: 'All', searchQuery: '', sortBy: 'featured' };
+    const CATEGORIES = ['All','Skincare','Body Care','Hair Care & Wigs','Accessories & Glasses','Baby & Mom','Makeup','Perfume'];
+    const CATEGORY_IMAGES = {
+      'Skincare': 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
+      'Body Care': 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=600',
+      'Hair Care & Wigs': 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=600',
+      'Accessories & Glasses': 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600',
+      'Baby & Mom': 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&q=80&w=600',
+      'Makeup': 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=600',
+      'Perfume': 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600'
+    };
+    const naira = n => '₦' + Number(n).toLocaleString();
+    function stars(r){ let s=''; for(let i=1;i<=5;i++){ s+=`<i class="bi bi-star-fill ${i<=Math.round(r)?'text-warning':'text-secondary opacity-25'}"></i>`; } return `<span class="d-inline-flex gap-1">${s}</span>`; }
+
+    let cartOffcanvas=null, toastObj=null;
+    document.addEventListener('DOMContentLoaded', () => {
+      cartOffcanvas = new bootstrap.Offcanvas(document.getElementById('cart-drawer'));
+      toastObj = new bootstrap.Toast(document.getElementById('toast'), {delay:2400});
+      document.getElementById('open-cart-btn').addEventListener('click', ()=>toggleCart(true));
+      document.getElementById('close-cart-btn').addEventListener('click', ()=>toggleCart(false));
+      document.getElementById('proceed-checkout-btn').addEventListener('click', ()=>{ toggleCart(false); window.location.hash='checkout'; });
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape') toggleCart(false); });
+      document.querySelectorAll('#mainNav .nav-link').forEach(a=>a.addEventListener('click',()=>{ const c=document.getElementById('mainNav'); if(c.classList.contains('show')) bootstrap.Collapse.getInstance(c).hide(); }));
+      window.addEventListener('hashchange', handleRouting);
+      handleRouting(); updateCartUI();
+    });
+    function handleRouting(){
+      const hash = window.location.hash.replace('#','') || 'home';
+      if(hash.startsWith('product-')) renderProductDetail(hash.replace('product-',''));
+      else if(hash==='categories') renderCategoriesView();
+      else if(hash==='contact') renderContactView();
+      else if(hash==='checkout') renderCheckoutView();
+      else if(hash==='track') renderTrackView();
+      else if(hash==='shop') renderShopView();
+      else renderHomeView();
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function showToast(msg){ document.getElementById('toast-msg').textContent=msg; toastObj.show(); }
+
+    function renderHomeView(){
+      const app=document.getElementById('app-content');
+      const featured=[...state.products].sort((a,b)=>b.reviewsCount-a.reviewsCount).slice(0,6);
+      const newArr=[...state.products].slice(10,16);
+      app.innerHTML=`
+      <section class="hero-wrap py-4 py-lg-5">
+        <div class="hero-dots"></div>
+        <div class="container position-relative">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-6 fade-up">
+              <span class="badge bg-white border text-uppercase fw-bold me-1 mb-2" style="color:var(--gold)"><i class="bi bi-stars me-1"></i>Beauty &amp; Essentials</span>
+              <span class="badge text-white mb-2" style="background:var(--dark)"><i class="bi bi-geo-alt me-1"></i>Ships Across Nigeria</span>
+              <h1 class="serif fw-bold display-5 display-lg-4">Feel Beautiful.<br><em class="fw-medium" style="background:linear-gradient(90deg,var(--rose),var(--rose-dark),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent">Be Effortlessly You.</em></h1>
+              <p class="text-secondary">Discover body creams, hair growth creams, luxury wigs, designer glasses, makeup &amp; baby essentials — curated for melanin-rich skin, by <strong class="text-dark">1st Lady Cosmetic</strong>.</p>
+              <div class="d-grid d-sm-flex gap-2">
+                <a href="#shop" class="btn btn-dark-custom px-4 py-3">Shop Catalog (${state.products.length} Items) <i class="bi bi-arrow-right ms-1"></i></a>
+                <a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20need%20assistance." target="_blank" class="btn btn-wa px-4 py-3"><i class="bi bi-whatsapp me-1"></i>WhatsApp Us</a>
+              </div>
+              <div class="d-flex align-items-center gap-3 mt-3 small">
+                <div class="d-flex"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=100" class="rounded-circle border border-2 border-white" width="38" height="38" style="object-fit:cover" alt="customer"><img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=100" class="rounded-circle border border-2 border-white ms-n2" width="38" height="38" style="object-fit:cover;margin-left:-12px" alt="customer"><img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80&w=100" class="rounded-circle border border-2 border-white" width="38" height="38" style="object-fit:cover;margin-left:-12px" alt="customer"><span class="rounded-circle text-white d-inline-flex align-items-center justify-content-center fw-bold border border-2 border-white" style="width:38px;height:38px;background:var(--dark);margin-left:-12px;font-size:.65rem">2k+</span></div>
+                <div>${stars(5)} <strong>4.9/5</strong><br><span class="text-muted">Loved by 2,000+ customers</span></div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 position-relative">
+              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1000" class="hero-img" alt="Modern cosmetic model">
+              <div class="position-absolute top-0 start-0 m-2 m-sm-3 float-badge p-2 pe-3 d-flex align-items-center gap-2 small"><span class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width:38px;height:38px;background:var(--rose-light);color:var(--rose)"><i class="bi bi-patch-check-fill"></i></span><span><strong>100% Authentic</strong><br><span class="text-muted">Dermatologist loved</span></span></div>
+              <div class="position-absolute bottom-0 end-0 m-2 m-sm-3 text-white p-2 pe-3 d-flex align-items-center gap-2 small rounded-3" style="background:var(--dark)"><span class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width:38px;height:38px;background:rgba(185,150,90,.25);color:var(--gold)"><i class="bi bi-truck"></i></span><span><strong>Fast Delivery</strong><br><span class="text-white-50">Nationwide</span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="border-top border-bottom bg-white py-2 mt-4 marquee"><div class="marquee-inner">Skincare <i class="bi bi-diamond-fill mx-2"></i> Wigs <i class="bi bi-diamond-fill mx-2"></i> Body Butter <i class="bi bi-diamond-fill mx-2"></i> Makeup <i class="bi bi-diamond-fill mx-2"></i> Perfume <i class="bi bi-diamond-fill mx-2"></i> Eyewear <i class="bi bi-diamond-fill mx-2"></i> Baby Care <i class="bi bi-diamond-fill mx-2"></i>&nbsp;&nbsp;Skincare <i class="bi bi-diamond-fill mx-2"></i> Wigs <i class="bi bi-diamond-fill mx-2"></i> Body Butter <i class="bi bi-diamond-fill mx-2"></i> Makeup <i class="bi bi-diamond-fill mx-2"></i> Perfume <i class="bi bi-diamond-fill mx-2"></i> Eyewear <i class="bi bi-diamond-fill mx-2"></i> Baby Care <i class="bi bi-diamond-fill mx-2"></i></div></div>
+      </section>
+      <section class="container mt-4">
+        <div class="d-flex justify-content-between align-items-end mb-3"><div><div class="small fw-bold text-uppercase text-rose">Curated Departments</div><h2 class="serif fw-bold h3 mb-0">Shop By Category</h2></div><a href="#categories" class="d-none d-sm-inline small fw-bold text-rose">View all <i class="bi bi-arrow-right"></i></a></div>
+        <div class="row g-2 g-sm-3">
+          ${CATEGORIES.filter(c=>c!=='All').slice(0,4).map(cat=>{ const n=state.products.filter(p=>p.category===cat).length; return `<div class="col-6 col-lg-3"><button onclick="filterCategoryAndShop('${cat}')" class="cat-tile w-100"><img src="${CATEGORY_IMAGES[cat]}" alt="${cat}" loading="lazy"><span class="position-absolute top-0 start-0 m-2 badge bg-light text-dark">${n} items</span><span class="position-absolute bottom-0 start-0 p-3"><strong class="serif d-block fs-5">${cat}</strong><small>Shop now <i class="bi bi-arrow-right"></i></small></span></button></div>`;}).join('')}
+        </div>
+        <div class="row g-2 g-sm-3 mt-1">
+          ${CATEGORIES.filter(c=>c!=='All').slice(4).map(cat=>{ const n=state.products.filter(p=>p.category===cat).length; return `<div class="col-4"><button onclick="filterCategoryAndShop('${cat}')" class="cat-mini w-100 p-2 p-sm-3 text-center"><img src="${CATEGORY_IMAGES[cat]}" class="rounded-3 mb-2" style="width:100%;height:64px;object-fit:cover" alt="${cat}"><strong class="serif d-block small">${cat}</strong><small class="text-muted">${n} items</small></button></div>`;}).join('')}
+        </div>
+      </section>
+      <section class="container mt-5">
+        <div class="d-flex justify-content-between align-items-end mb-3 flex-wrap gap-2"><div><div class="small fw-bold text-uppercase text-gold">Customer Favourites</div><h2 class="serif fw-bold h3 mb-0">Top Bestsellers</h2></div><a href="#shop" class="btn btn-dark-custom btn-sm px-3 py-2">View Full Shop <i class="bi bi-arrow-right"></i></a></div>
+        <div class="row g-2 g-sm-3">${featured.map((p,i)=>`<div class="col-6 col-lg-4">${renderProductCard(p,i)}</div>`).join('')}</div>
+      </section>
+      <section class="container mt-4">
+        <div class="ritual text-white p-4 p-md-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-6"><span class="badge bg-white bg-opacity-10 border text-gold mb-2">The 1st Lady Ritual</span><h2 class="serif fw-bold h3">Melanin-safe glow, <em style="color:#F8E9E9">without the white cast.</em></h2><p class="small text-white-50">From invisible SPF 50 to raw shea body butter and bone-straight HD wigs — tested for rich skin tones and Nigerian weather.</p><div class="d-grid d-sm-flex gap-2"><a href="#shop" class="btn btn-rose px-4 py-2">Shop Bestsellers</a><a href="#categories" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold">Explore Ritual</a></div></div>
+            <div class="col-12 col-md-6"><div class="row g-2">${[state.products[4],state.products[11],state.products[19]].map(p=>`<div class="col-4"><a href="#product-${p.id}" class="card bg-white bg-opacity-10 border-light border-opacity-25 text-white text-decoration-none p-2 text-center h-100"><img src="${p.images[0]}" class="rounded-3 mb-2" style="height:80px;object-fit:cover;width:100%" alt="${p.name}"><small class="fw-bold clamp-2 d-block" style="min-height:2.4em">${p.name}</small><small class="fw-bold text-gold">${naira(p.price)}</small></a></div>`).join('')}</div></div>
+          </div>
+        </div>
+      </section>
+      <section class="container mt-5">
+        <div class="row g-3">
+          <div class="col-12 col-lg-8"><h2 class="serif fw-bold h4 mb-3">New &amp; Loved Right Now</h2><div class="row g-2 g-sm-3">${newArr.map(p=>`<div class="col-6 col-md-4">${renderProductCard(p,1,true)}</div>`).join('')}</div></div>
+          <div class="col-12 col-lg-4 d-grid gap-3">
+            <div class="card p-3 p-sm-4 card-beauty"><h5 class="serif fw-bold">Why shop with us?</h5>
+              <div class="d-flex gap-2 small mb-2"><span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width:38px;height:38px;background:var(--rose-light);color:var(--rose)"><i class="bi bi-check-lg"></i></span><span><strong>100% Authentic.</strong><br><span class="text-muted">No fakes. Sourced for sensitive skin.</span></span></div>
+              <div class="d-flex gap-2 small mb-2"><span class="rounded-circle bg-success bg-opacity-10 text-success d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width:38px;height:38px"><i class="bi bi-truck"></i></span><span><strong>Nationwide delivery.</strong><br><span class="text-muted">Free over ₦800,000. Track on WhatsApp.</span></span></div>
+              <div class="d-flex gap-2 small"><span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width:38px;height:38px;background:rgba(185,150,90,.15);color:var(--gold)"><i class="bi bi-star-fill"></i></span><span><strong>Beauty consultants.</strong><br><span class="text-muted">Shade matching &amp; wig customisation.</span></span></div>
+              <div class="row g-2 mt-2"><div class="col-6"><a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20need%20assistance." target="_blank" class="btn btn-wa btn-sm w-100 py-2"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a></div><div class="col-6"><a href="mailto:igwejiokefrancis@gmail.com?subject=Inquiry" class="btn btn-dark-custom btn-sm w-100 py-2"><i class="bi bi-envelope me-1"></i>Email Us</a></div></div>
+            </div>
+            <div class="card p-4 text-white border-0" style="background:var(--dark);border-radius:20px"><div class="small text-uppercase fw-bold text-gold">Visit Us</div><h5 class="serif fw-bold">Taiwo Isale, Kwara State</h5><p class="small text-white-50 mb-2">Mon - Sat: 9:00 AM - 7:00 PM<br>Support 24/7 on WhatsApp &amp; Email.</p><a href="#contact" class="btn btn-light btn-sm rounded-pill fw-bold">Contact Store <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="container mt-5">
+        <div class="text-center mb-3"><div class="small fw-bold text-uppercase text-rose">Glow Stories</div><h2 class="serif fw-bold h3">Loved Across Nigeria</h2></div>
+        <div class="row g-2 g-sm-3">
+          ${[{n:'Adaeze O.',c:'Lagos',t:'The Vitamin C cream cleared my dark spots in 3 weeks. No white cast, no irritation. I have repurchased twice!',img:'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=200'},{n:'Fatima S.',c:'Ilorin',t:'My 26-inch body wave wig is so full and true to length. Pre-plucked hairline, zero shedding. Worth every naira.',img:'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=200'},{n:'Tolu A.',c:'Abuja',t:'Ordered Monday, delivered Wednesday. The shea body butter smells divine and my skin stays soft all day.',img:'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80&w=200'}].map(r=>`<div class="col-12 col-md-4"><div class="card p-3 p-sm-4 card-beauty"><div><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div><p class="small text-secondary mt-2">“${r.t}”</p><div class="d-flex align-items-center gap-2"><img src="${r.img}" width="42" height="42" class="rounded-circle" style="object-fit:cover" alt="${r.n}"><div class="small"><strong>${r.n}</strong><br><span class="text-muted">Verified buyer • ${r.c}</span></div></div></div></div>`).join('')}
+        </div>
+      </section>
+      <section class="container my-4">
+        <div class="card border-0 text-white p-4 p-md-5" style="background:linear-gradient(90deg,var(--dark),#3a2429,var(--rose-dark));border-radius:26px">
+          <div class="row align-items-center g-3"><div class="col-12 col-md-7"><div class="small fw-bold text-uppercase text-gold">Need Advice or Assistance?</div><h2 class="serif fw-bold h4">Talk to Our Beauty Consultants</h2><p class="small text-white-50 mb-0">Skin-type guidance, wig customisation, shade matching, or bulk orders.</p></div><div class="col-12 col-md-5 d-grid d-sm-flex gap-2 justify-content-md-end"><a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20need%20assistance." target="_blank" class="btn btn-wa px-4 py-3"><i class="bi bi-whatsapp me-1"></i>WhatsApp Chat</a><a href="mailto:igwejiokefrancis@gmail.com?subject=Inquiry" class="btn btn-light rounded-pill px-4 py-3 fw-bold"><i class="bi bi-envelope me-1"></i>Send Email</a></div></div>
+        </div>
+      </section>`;
+    }
+
+    function renderContactView(){
+      document.getElementById('app-content').innerHTML=`
+      <section class="container py-4 py-sm-5 fade-up" style="max-width:960px">
+        <div class="text-center mb-4"><span class="badge bg-white border text-rose mb-2">We reply within hours</span><h1 class="serif fw-bold display-6">Get In Touch</h1><p class="small text-muted mx-auto" style="max-width:520px">Order questions, skin recommendations, or wholesale inquiries? Reach us via WhatsApp or Email.</p></div>
+        <div class="row g-3">
+          <div class="col-12 col-md-6"><div class="card p-4 text-center card-beauty h-100"><div class="rounded-3 mx-auto mb-2 d-inline-flex align-items-center justify-content-center" style="width:56px;height:56px;background:rgba(37,211,102,.12);color:#1a9e4b"><i class="bi bi-whatsapp fs-4"></i></div><h5 class="serif fw-bold">WhatsApp Instant Chat</h5><p class="small text-muted">Fastest response — chat with support now.</p><a href="https://wa.me/23408186729201?text=Hello%20GlowBeauty!" target="_blank" class="btn btn-wa w-100 py-2">Start Chat (23408186729201)</a><small class="text-muted d-block mt-2">Mon - Sat: 9AM - 7PM • Online 24/7</small></div></div>
+          <div class="col-12 col-md-6"><div class="card p-4 text-center card-beauty h-100"><div class="rounded-3 mx-auto mb-2 d-inline-flex align-items-center justify-content-center" style="width:56px;height:56px;background:var(--rose-light);color:var(--rose)"><i class="bi bi-envelope fs-4"></i></div><h5 class="serif fw-bold">Gmail / Email Us</h5><p class="small text-muted">Replies within 24 hours.</p><a href="mailto:igwejiokefrancis@gmail.com?subject=Customer%20Inquiry" class="btn btn-dark-custom w-100 py-2 text-break">igwejiokefrancis@gmail.com</a><small class="text-muted d-block mt-2">Taiwo Isale, Kwara State, Nigeria</small></div></div>
+        </div>
+        <div class="card p-4 mt-3 card-beauty"><div class="row g-4"><div class="col-12 col-md-5"><h5 class="serif fw-bold">Visit the Store</h5><p class="small text-muted">Taiwo Isale, Kwara State, Nigeria.<br>Mon - Sat: 9:00 AM - 7:00 PM<br>Support 24/7 via WhatsApp &amp; Email.</p><div class="d-flex gap-2 flex-wrap"><a href="https://wa.me/+2348186729201" target="_blank" class="btn btn-dark-custom btn-sm px-3">Directions via WhatsApp</a><a href="mailto:igwejiokefrancis@gmail.com" class="btn btn-outline-dark btn-sm rounded-pill px-3">Email Store</a></div></div><div class="col-12 col-md-7"><h5 class="serif fw-bold">Or Leave a Quick Message</h5><form onsubmit="event.preventDefault();showToast('Message sent! We will contact you shortly.');this.reset();" class="d-grid gap-2"><input class="form-control" placeholder="Your Full Name" required><input type="email" class="form-control" placeholder="Your Email Address" required><textarea class="form-control" rows="4" placeholder="Write your message..." required></textarea><button class="btn btn-rose py-2">Submit Message <i class="bi bi-arrow-right"></i></button></form></div></div></div>
+      </section>`;
+    }
+
+    function getFiltered(){
+      let list=state.products.filter(p=>{ const c=state.selectedCategory==='All'||p.category===state.selectedCategory; const s=(p.name+' '+p.category).toLowerCase().includes(state.searchQuery.toLowerCase()); return c&&s; });
+      if(state.sortBy==='low') list=[...list].sort((a,b)=>a.price-b.price);
+      if(state.sortBy==='high') list=[...list].sort((a,b)=>b.price-a.price);
+      if(state.sortBy==='rated') list=[...list].sort((a,b)=>b.rating-a.rating);
+      if(state.sortBy==='popular') list=[...list].sort((a,b)=>b.reviewsCount-a.reviewsCount);
+      return list;
+    }
+    function setSort(v){ state.sortBy=v; renderShopView(); }
+    function clearFilters(){ state.selectedCategory='All'; state.searchQuery=''; state.sortBy='featured'; renderShopView(); }
+    function filterCategoryAndShop(cat){ state.selectedCategory=cat; state.searchQuery=''; if(window.location.hash!=='#shop') window.location.hash='shop'; else renderShopView(); }
+
+    function renderShopView(){
+      const filtered=getFiltered();
+      document.getElementById('app-content').innerHTML=`
+      <section class="container py-4 fade-up">
+        <div class="card border-0 text-white p-4 p-md-5 mb-3" style="background:linear-gradient(90deg,rgba(32,25,27,.96),rgba(32,25,27,.7)),url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1200') center/cover;border-radius:22px">
+          <div class="row g-3 align-items-center"><div class="col-12 col-md-6"><div class="small fw-bold text-uppercase text-gold">The Full Catalogue</div><h1 class="serif fw-bold h3">Shop All Beauty &amp; Essentials</h1><p class="small text-white-50 mb-0">Displaying ${filtered.length} of ${state.products.length} products • Authentic • Nationwide delivery</p></div>
+          <div class="col-12 col-md-6"><div class="row g-2"><div class="col-12 col-sm-7"><div class="input-group"><span class="input-group-text bg-white border-0"><i class="bi bi-search"></i></span><input id="search-input" class="form-control border-0" placeholder="Search cream, wig, glasses..." value="${state.searchQuery.replace(/"/g,'&quot;')}"></div></div><div class="col-12 col-sm-5"><select onchange="setSort(this.value)" class="form-select"><option value="featured" ${state.sortBy==='featured'?'selected':''}>Featured</option><option value="popular" ${state.sortBy==='popular'?'selected':''}>Most Popular</option><option value="rated" ${state.sortBy==='rated'?'selected':''}>Top Rated</option><option value="low" ${state.sortBy==='low'?'selected':''}>Price: Low to High</option><option value="high" ${state.sortBy==='high'?'selected':''}>Price: High to Low</option></select></div></div></div></div>
+        </div>
+        <div class="d-flex gap-2 overflow-auto pb-2 mb-1">${CATEGORIES.map(cat=>`<button class="btn btn-sm rounded-pill fw-bold flex-shrink-0 ${state.selectedCategory===cat?'btn-dark':'btn-light border'}" data-cat="${cat}">${cat}</button>`).join('')}</div>
+        <div class="row g-2 g-sm-3">${filtered.length?filtered.map((p,i)=>`<div class="col-6 col-lg-4">${renderProductCard(p,i)}</div>`).join(''):`<div class="col-12"><div class="card p-5 text-center card-beauty"><i class="bi bi-search fs-1 text-secondary"></i><p class="small text-muted mt-2">No products for "<strong>${state.searchQuery}</strong>"</p><button onclick="clearFilters()" class="btn btn-dark-custom btn-sm px-4">Clear Filters</button></div></div>`}</div>
+      </section>`;
+      document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',e=>{ state.selectedCategory=e.target.dataset.cat; renderShopView(); }));
+      const si=document.getElementById('search-input');
+      if(si) si.addEventListener('input',e=>{ state.searchQuery=e.target.value; const pos=e.target.selectionStart; renderShopView(); const n=document.getElementById('search-input'); if(n){n.focus(); try{n.setSelectionRange(pos,pos)}catch(_){}} });
+    }
+
+    function renderCategoriesView(){
+      const active=CATEGORIES.filter(c=>c!=='All');
+      document.getElementById('app-content').innerHTML=`
+      <section class="container py-4 fade-up">
+        <div class="text-center mb-4"><div class="small fw-bold text-uppercase text-rose">Organised Shopping</div><h1 class="serif fw-bold">Product Collections</h1><p class="small text-muted">Tap any department to filter</p></div>
+        <div class="row g-2 g-sm-3 mb-4">${active.map(cat=>{ const n=state.products.filter(p=>p.category===cat).length; return `<div class="col-6 col-lg-3"><button onclick="filterCategoryAndShop('${cat}')" class="cat-tile w-100"><img src="${CATEGORY_IMAGES[cat]}" alt="${cat}" loading="lazy"><span class="position-absolute bottom-0 start-0 p-3"><strong class="serif d-block fs-6">${cat}</strong><small>${n} items <i class="bi bi-arrow-right"></i></small></span></button></div>`;}).join('')}</div>
+        ${active.map(cat=>{ const items=state.products.filter(p=>p.category===cat); if(!items.length) return ''; return `<div class="d-flex justify-content-between align-items-center border-bottom py-2 mt-4 mb-3 flex-wrap gap-2"><div><h2 class="serif fw-bold h5 mb-0">${cat}</h2><small class="text-muted">${items.length} items</small></div><button onclick="filterCategoryAndShop('${cat}')" class="btn btn-dark-custom btn-sm">Browse All <i class="bi bi-arrow-right"></i></button></div><div class="row g-2 g-sm-3">${items.map((p,i)=>`<div class="col-6 col-lg-4">${renderProductCard(p,i)}</div>`).join('')}</div>`;}).join('')}
+      </section>`;
+    }
+
+    function renderProductCard(p,idx=0,compact=false){
+      const badge=p.rating>=5?'Bestseller':(p.reviewsCount>150?'Loved':p.category);
+      return `<div class="card-beauty d-flex flex-column h-100">
+        <a href="#product-${p.id}" class="d-block position-relative p-img"><img src="${p.images[0]}" alt="${p.name}" loading="lazy"><span class="position-absolute top-0 start-0 m-2 badge bg-light text-dark border">${badge}</span><span class="position-absolute top-0 end-0 m-2 badge bg-light text-dark border rounded-circle d-none d-sm-inline-flex" style="width:32px;height:32px;align-items:center;justify-content:center"><i class="bi bi-heart"></i></span>${idx===0?'<span class="position-absolute bottom-0 start-0 m-2 badge text-white" style="background:var(--dark)"><i class="bi bi-star-fill text-warning me-1"></i>Top pick</span>':''}</a>
+        <div class="p-2 p-sm-3 d-flex flex-column flex-grow-1">
+          <div class="d-flex align-items-center gap-1 small">${stars(p.rating)}<span class="text-muted" style="font-size:.72rem">${p.rating} (${p.reviewsCount})</span></div>
+          <a href="#product-${p.id}" class="serif fw-bold text-dark text-decoration-none clamp-1 mt-1" style="font-size:.9rem">${p.name}</a>
+          <p class="small text-muted clamp-2 mb-2 d-none d-sm-block">${p.description}</p>
+          <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center gap-2"><div class="fw-bold" style="font-size:.9rem">${naira(p.price)}</div><button onclick="addToCart('${p.id}')" class="btn btn-dark-custom btn-sm px-3"><i class="bi bi-plus-lg me-1"></i>Bag</button></div>
+        </div></div>`;
+    }
+
+    function renderProductDetail(id){
+      const p=state.products.find(x=>x.id===id);
+      const app=document.getElementById('app-content');
+      if(!p){ app.innerHTML=`<div class="container text-center py-5"><i class="bi bi-bag fs-1 text-secondary"></i><p>Product not found.</p><a href="#shop" class="link-danger fw-bold">Return to Shop</a></div>`; return; }
+      const rel=state.products.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);
+      window._dq=1;
+      app.innerHTML=`
+      <section class="container py-4 fade-up">
+        <nav class="small text-muted mb-3"><a href="#home" class="link-secondary">Home</a> / <a href="#shop" class="link-secondary">Shop</a> / <span class="text-dark">${p.name}</span></nav>
+        <div class="row g-4">
+          <div class="col-12 col-md-6"><img src="${p.images[0]}" class="w-100 rounded-4 border" style="aspect-ratio:1/1;object-fit:cover;border-radius:22px" alt="${p.name}">
+            <div class="row g-2 mt-2 text-center small"><div class="col-4"><div class="border rounded-3 p-2"><i class="bi bi-leaf text-success fs-5"></i><div class="fw-bold" style="font-size:.68rem">SKIN SAFE</div></div></div><div class="col-4"><div class="border rounded-3 p-2"><i class="bi bi-truck fs-5"></i><div class="fw-bold" style="font-size:.68rem">FAST DELIVERY</div></div></div><div class="col-4"><div class="border rounded-3 p-2"><i class="bi bi-patch-check-fill text-success fs-5"></i><div class="fw-bold" style="font-size:.68rem">AUTHENTIC</div></div></div></div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="small fw-bold text-uppercase text-gold">${p.category}</div>
+            <h1 class="serif fw-bold h3">${p.name}</h1>
+            <div class="d-flex align-items-center gap-2 small">${stars(p.rating)}<strong>${p.rating}</strong><span class="text-muted">• ${p.reviewsCount} reviews</span></div>
+            <div class="fs-3 fw-bold mt-2">${naira(p.price)}</div>
+            <div class="small fw-bold text-success"><i class="bi bi-circle-fill me-1" style="font-size:.5rem"></i>In Stock — ships from Kwara State</div>
+            <p class="small text-secondary bg-white border rounded-3 p-3 mt-3">${p.description}</p>
+            ${p.shades?`<label class="small fw-bold text-uppercase">Option / Size / Shade</label><select id="shade-select" class="form-select mb-3">${p.shades.map(s=>`<option>${s}</option>`).join('')}</select>`:''}
+            <div class="d-flex gap-2 mb-2"><div class="input-group" style="max-width:150px"><button class="btn btn-outline-secondary" onclick="detailQty(-1)"><i class="bi bi-dash-lg"></i></button><span id="detail-qty" class="input-group-text bg-white fw-bold justify-content-center" style="width:46px">1</span><button class="btn btn-outline-secondary" onclick="detailQty(1)"><i class="bi bi-plus-lg"></i></button></div>
+            <button onclick="addToCart('${p.id}',getDetailQty())" class="btn btn-dark-custom flex-fill py-2">Add to Bag — ${naira(p.price)}</button></div>
+            <a href="https://wa.me/23408186729201?text=${encodeURIComponent('Hello 1st Lady Cosmetic! I have a question about '+p.name+' ('+naira(p.price)+')')}" target="_blank" class="btn btn-outline-success rounded-pill w-100 fw-bold"><i class="bi bi-whatsapp me-1"></i>Ask About This Product on WhatsApp</a>
+            <div class="row g-2 mt-2 small"><div class="col-sm-6"><div class="border rounded-3 p-3 bg-white h-100"><strong class="d-block small text-uppercase">Ingredients</strong><span class="text-muted">${p.ingredients}</span></div></div><div class="col-sm-6"><div class="border rounded-3 p-3 bg-white h-100"><strong class="d-block small text-uppercase">How to Use</strong><span class="text-muted">${p.usage}</span></div></div></div>
+            <a href="#shop" class="small fw-bold text-rose d-inline-block mt-3"><i class="bi bi-arrow-left me-1"></i>Back to Shop Catalog</a>
+          </div>
+        </div>
+        ${rel.length?`<h2 class="serif fw-bold h5 mt-5 mb-3">You may also love</h2><div class="row g-2 g-sm-3">${rel.map((r,i)=>`<div class="col-6 col-lg-4">${renderProductCard(r,i)}</div>`).join('')}</div>`:''}
+      </section>`;
+    }
+    function getDetailQty(){ return window._dq||1; }
+    function detailQty(d){ window._dq=Math.max(1,(window._dq||1)+d); document.getElementById('detail-qty').textContent=window._dq; }
+
+    function renderCheckoutView(){
+      const app=document.getElementById('app-content');
+      if(!state.cart.length){ app.innerHTML=`<div class="container text-center py-5" style="max-width:520px"><i class="bi bi-bag fs-1" style="color:var(--rose)"></i><h2 class="serif fw-bold h4 mt-2">Your Bag is Empty</h2><a href="#shop" class="btn btn-dark-custom px-4 py-2 mt-2">Start Shopping <i class="bi bi-arrow-right"></i></a></div>`; return; }
+      const sub=state.cart.reduce((s,i)=>s+i.price*i.quantity,0);
+      app.innerHTML=`
+      <section class="container py-4 fade-up"><div class="small fw-bold text-uppercase text-rose">Almost yours</div><h1 class="serif fw-bold mb-4">Checkout</h1>
+        <div class="row g-3"><div class="col-12 col-md-7"><form id="checkout-form" class="card p-3 p-sm-4 card-beauty">
+          <h6 class="fw-bold text-uppercase text-gold small">1. Delivery Information</h6>
+          <div class="row g-2"><div class="col-12"><input id="cust-name" class="form-control" placeholder="Full Name" required></div><div class="col-sm-6"><input id="cust-email" type="email" class="form-control" placeholder="Email Address" required></div><div class="col-sm-6"><input id="cust-phone" class="form-control" placeholder="Phone Number" required></div><div class="col-12"><input id="cust-address" class="form-control" placeholder="Delivery Address" required></div><div class="col-12"><select id="state" class="form-select" required><option value="" selected disabled>Select State</option><option>Lagos State</option><option>Abuja (FCT)</option><option>Rivers</option><option>Oyo</option><option>Kwara</option><option>Ibadan</option><option>Offa</option><option>Osun</option><option>Kogi</option><option>Edo</option><option>Delta</option><option>Enugu</option><option>Other State</option></select></div></div>
+          <small class="text-muted d-block mt-2"><i class="bi bi-whatsapp me-1"></i>Pay on delivery / transfer confirmation via WhatsApp: +23408186729201</small>
+          <button class="btn btn-dark-custom w-100 py-3 mt-2">Confirm Order — ${naira(sub)}</button></form></div>
+        <div class="col-12 col-md-5"><div class="card p-3 p-sm-4 card-beauty"><h6 class="fw-bold text-uppercase text-gold small">Order Summary</h6>${state.cart.map(it=>`<div class="d-flex gap-2 align-items-center py-2 border-bottom small"><img src="${it.images[0]}" width="48" height="48" class="rounded-3" style="object-fit:cover" alt="${it.name}"><div class="flex-fill"><strong class="d-block">${it.name}</strong><span class="text-muted">x${it.quantity}</span></div><strong>${naira(it.price*it.quantity)}</strong></div>`).join('')}<div class="d-flex justify-content-between fw-bold mt-3"><span>Total Due:</span><span>${naira(sub)}</span></div><small class="text-muted">Free delivery on orders over ₦800,000.</small></div></div></div>
+      </section>`;
+      document.getElementById('checkout-form').addEventListener('submit',e=>{ e.preventDefault(); const ref='GB-'+Date.now(); const nm=document.getElementById('cust-name').value; showToast('Order '+ref+' placed. Thank you, '+nm.split(' ')[0]+'!'); state.cart=[]; updateCartUI(); setTimeout(()=>window.location.hash='home',900); });
+    }
+
+    function renderTrackView(){
+      document.getElementById('app-content').innerHTML=`
+      <section class="container py-5 text-center fade-up" style="max-width:560px">
+        <span class="badge bg-success bg-opacity-10 text-success border mb-2"><i class="bi bi-truck me-1"></i>Live dispatch updates</span>
+        <h1 class="serif fw-bold">Track Delivery Status</h1><p class="small text-muted">Enter your order reference (e.g. GB-1700000000)</p>
+        <div class="card p-3 p-sm-4 card-beauty text-start"><div class="input-group mb-2"><input id="track-input" class="form-control" placeholder="e.g. GB-1700000000"><button onclick="showToast('Order Status: Paid & Processing for dispatch.')" class="btn btn-dark-custom px-4">Search</button></div>
+        <a href="https://wa.me/23408186729201?text=Hello%201stladycosmetic!%20I%20want%20to%20track%20my%20order." target="_blank" class="btn btn-outline-success rounded-pill w-100 fw-bold"><i class="bi bi-whatsapp me-1"></i>Track via WhatsApp</a>
+        <small class="text-muted d-block text-center mt-2">Or email igwejiokefrancis@gmail.com with your reference.</small></div>
+      </section>`;
+    }
+
+    function addToCart(id,qty=1){ const pr=state.products.find(p=>p.id===id); if(!pr) return; const ex=state.cart.find(i=>i.id===id); if(ex) ex.quantity+=qty; else state.cart.push({...pr,quantity:qty}); updateCartUI(); toggleCart(true); showToast(pr.name+' added to bag'); }
+    function changeQty(id,d){ const it=state.cart.find(i=>i.id===id); if(it){ it.quantity+=d; if(it.quantity<=0) state.cart=state.cart.filter(i=>i.id!==id); } updateCartUI(); }
+    function updateCartUI(){
+      document.getElementById('cart-count').textContent=state.cart.reduce((s,i)=>s+i.quantity,0);
+      const sub=state.cart.reduce((s,i)=>s+i.price*i.quantity,0);
+      document.getElementById('cart-subtotal').textContent=naira(sub);
+      document.getElementById('free-ship-bar').style.width=Math.min(100,(sub/800000)*100)+'%';
+      document.getElementById('free-ship-msg').innerHTML=sub>=800000?'<strong class="text-success"><i class="bi bi-check-circle-fill me-1"></i>You unlocked FREE delivery!</strong>':(sub>0?`Add <strong>${naira(800000-sub)}</strong> more for FREE delivery.`:'Taxes and shipping calculated at checkout.');
+      const c=document.getElementById('cart-items-container');
+      if(!state.cart.length){ c.innerHTML=`<div class="text-center py-4"><i class="bi bi-bag fs-1 d-block mb-2" style="color:var(--rose)"></i><h6 class="serif fw-bold">Your bag is empty</h6><p class="small text-muted">Discover body creams, wigs &amp; glow essentials.</p><button onclick="toggleCart(false);window.location.hash='shop'" class="btn btn-dark-custom btn-sm px-4">Start Shopping <i class="bi bi-arrow-right"></i></button></div>`; return; }
+      c.innerHTML=state.cart.map(it=>`<div class="card p-2 d-flex flex-row gap-2 align-items-center"><img src="${it.images[0]}" width="60" height="60" class="rounded-3 flex-shrink-0" style="object-fit:cover" alt="${it.name}"><div class="flex-fill small" style="min-width:0"><strong class="d-block text-truncate">${it.name}</strong><span class="text-muted">${naira(it.price)}</span><div class="d-flex align-items-center gap-2 mt-1"><button onclick="changeQty('${it.id}',-1)" class="btn btn-sm btn-light border rounded-pill" style="width:28px;height:28px"><i class="bi bi-dash-lg"></i></button><strong>${it.quantity}</strong><button onclick="changeQty('${it.id}',1)" class="btn btn-sm btn-light border rounded-pill" style="width:28px;height:28px"><i class="bi bi-plus-lg"></i></button><button onclick="changeQty('${it.id}',-999)" class="btn btn-sm btn-link text-danger ms-auto p-0"><i class="bi bi-trash"></i></button></div></div><strong class="small">${naira(it.price*it.quantity)}</strong></div>`).join('');
+    }
+    function toggleCart(open){ if(open) cartOffcanvas.show(); else cartOffcanvas.hide(); }
+  </script>
+</body>
+</html>
